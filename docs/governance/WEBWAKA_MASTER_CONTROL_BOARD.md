@@ -2,11 +2,11 @@
 
 **CANONICAL LIVING GOVERNANCE DOCUMENT**
 
-**Version: 8.0 (Repository Topology Migration Approved)**  
+**Version: 9.0 (Post-Migration Operating Rules Ratified)**  
 **Last Updated:** January 30, 2026  
 **Authority:** Founder
 
-> **Repository Topology Migration Approved:** The Founder has approved the migration from single-repository (INV-012) to multi-repository topology (INV-012v2). INV-012 has been formally retired. The migration will proceed in six phases under the governance of the `webwaka-governance` repository. All planning documents are located in `/docs/planning/repository-topology-migration/`. Migration execution will begin with Phase 1 (Governance Repository Creation).
+> **Post-Migration Operating Rules Ratified:** The Repository Topology Migration is formally CLOSED. The Post-Migration Operating Rules (GOV-004) have been ratified and are now binding. All platform operations must comply with the multi-repository operating model codified in `/docs/governance/POST_MIGRATION_OPERATING_RULES.md`. The five canonical repositories (`webwaka-governance`, `webwaka-platform-foundation`, `webwaka-infrastructure`, `webwaka-core-services`, `webwaka-capabilities`) are now the only valid sources for platform artifacts.
 
 > **Wave 3 Execution Complete:** All five Wave 3 phases (PF-3, CB-1, CB-4, ID-1, ID-3) have been implemented, verified, and are now operational. The platform has achieved significant milestones in its AI readiness, MLAS capability, inventory management, and deployment automation.
 
