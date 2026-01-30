@@ -6,6 +6,8 @@
 **Last Updated:** January 30, 2026  
 **Authority:** Founder
 
+> **Wave 4 Execution Authorized:** The Founder has approved the execution of five phases in Wave 4 under the new multi-repository topology. The wave includes one Core Services update (CS-3), three new Suites (SC-1, SC-2, SC-3), and one Infrastructure hardening phase (ID-2). Execution will proceed in parallel across Manus and Replit. All planning documents are located in `/docs/planning/wave4/`.
+
 > **Post-Migration Operating Rules Ratified:** The Repository Topology Migration is formally CLOSED. The Post-Migration Operating Rules (GOV-004) have been ratified and are now binding. All platform operations must comply with the multi-repository operating model codified in `/docs/governance/POST_MIGRATION_OPERATING_RULES.md`. The five canonical repositories (`webwaka-governance`, `webwaka-platform-foundation`, `webwaka-infrastructure`, `webwaka-core-services`, `webwaka-capabilities`) are now the only valid sources for platform artifacts.
 
 > **Wave 3 Execution Complete:** All five Wave 3 phases (PF-3, CB-1, CB-4, ID-1, ID-3) have been implemented, verified, and are now operational. The platform has achieved significant milestones in its AI readiness, MLAS capability, inventory management, and deployment automation.
@@ -389,7 +391,7 @@ This section tracks planned, but not yet started, phases.
 
 | Axis | Value |
 | :--- | :--- |
-| **Status** | 🟡 **Authorized for Execution (Wave 1 Parallel)** |
+| **Status** | 🟡 **Authorized for Execution (Wave 4 Parallel)** |
 | **Phase ID** | CS-3 |
 | **Phase Name** | Identity & Access Management V2 |
 | **Objective** | Implement advanced IAM features (e.g., social login, 2FA) |
@@ -403,8 +405,8 @@ This section tracks planned, but not yet started, phases.
 | **Dependencies** | Phase 2B |
 | **Execution Readiness** | ✅ Fully specifiable now |
 | **Blockers** | None |
-| **Assigned Platform** | Manus |
-| **Execution Wave** | Wave 1 (Parallel) |
+| **Assigned Platform** | Replit |
+| **Execution Wave** | Wave 4 (Parallel) |
 
 #### CS-4: Pricing & | **Status** | 🟢 **Complete** |
 | **Phase ID** | CS-4 |
@@ -512,7 +514,9 @@ This section tracks planned, but not yet started, phases.
 
 | Axis | Value |
 | :--- | :--- |
-| **Status** | ⚪ **Planned / Not Started** |
+| **Status** | 🟡 **Authorized for Execution (Wave 4 Parallel)** |
+| **Assigned Platform** | Manus |
+| **Execution Wave** | Wave 4 (Parallel) |
 | **Platform Layer** | Suites |
 | **Deployment Mode** | All |
 | **Actor Scope** | Partner, Client, Merchant/Vendor, Agent, End User |
@@ -529,7 +533,9 @@ This section tracks planned, but not yet started, phases.
 
 | Axis | Value |
 | :--- | :--- |
-| **Status** | ⚪ **Planned / Not Started** |
+| **Status** | 🟡 **Authorized for Execution (Wave 4 Parallel)** |
+| **Assigned Platform** | Manus |
+| **Execution Wave** | Wave 4 (Parallel) |
 | **Platform Layer** | Suites |
 | **Deployment Mode** | All |
 | **Actor Scope** | Super Admin, Partner, Client, Merchant/Vendor, Agent, End User |
@@ -546,7 +552,9 @@ This section tracks planned, but not yet started, phases.
 
 | Axis | Value |
 | :--- | :--- |
-| **Status** | ⚪ **Planned / Not Started** |
+| **Status** | 🟡 **Authorized for Execution (Wave 4 Parallel)** |
+| **Assigned Platform** | Manus |
+| **Execution Wave** | Wave 4 (Parallel) |
 | **Platform Layer** | Suites |
 | **Deployment Mode** | All |
 | **Actor Scope** | Partner, Client, Merchant/Vendor, Agent, End User |
@@ -585,7 +593,9 @@ This section tracks planned, but not yet started, phases.
 
 | Axis | Value |
 | :--- | :--- |
-| **Status** | ⚪ **Planned / Not Started** |
+| **Status** | 🟡 **Authorized for Execution (Wave 4 Parallel)** |
+| **Assigned Platform** | Manus |
+| **Execution Wave** | Wave 4 (Parallel) |
 | **Platform Layer** | Foundation, Core Services |
 | **Deployment Mode** | Partner-Deployed |
 | **Actor Scope** | Super Admin, Partner |
