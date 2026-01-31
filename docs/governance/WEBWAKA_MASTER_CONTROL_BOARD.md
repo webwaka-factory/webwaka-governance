@@ -472,7 +472,7 @@ This section tracks planned, but not yet started, phases.
 | **Assigned Platform** | Replit |
 | **Execution Wave** | Wave 2 |n Date** | January 30, 2026 |
 | **Tests** | 53 passing |
-| **Architecture Doc** | [ARCH_CS4_PRICING_BILLING.md](/docs/architecture/ARCH_CS4_PRICING_BILLING.md) |
+| **Architecture Doc** | [ARCH_CS4_PRICING_BILLING.md](../architecture/ARCH_CS4_PRICING_BILLING.md) |
 
 ### 7.4. Capability Build-Out Phases
 
@@ -512,7 +512,7 @@ This section tracks planned, but not yet started, phases.
 | **Assigned Platform** | Replit |
 | **Execution Wave** | Wave 1 (Parallel) |January 30, 2026 |
 | **Tests** | 55 passing |
-| **Architecture Doc** | [ARCH_CB2_REPORTING_ANALYTICS.md](/docs/architecture/ARCH_CB2_REPORTING_ANALYTICS.md) |
+| **Architecture Doc** | [ARCH_CB2_REPORTING_ANALYTICS.md](../architecture/ARCH_CB2_REPORTING_ANALYTICS.md) |
 
 #### CB-3: Content Management Capability
 
@@ -551,7 +551,7 @@ This section tracks planned, but not yet started, phases.
 | **Execution Wave** | Wave 3 |
 | **Completion Date** | January 30, 2026 |
 | **Tests** | 67 passing |
-| **Architecture Doc** | [ARCH_CB4_INVENTORY_MANAGEMENT.md](/docs/architecture/ARCH_CB4_INVENTORY_MANAGEMENT.md) |
+| **Architecture Doc** | [ARCH_CB4_INVENTORY_MANAGEMENT.md](../architecture/ARCH_CB4_INVENTORY_MANAGEMENT.md) |
 | **API Doc** | [CB4_INVENTORY_API.md](../api/CB4_INVENTORY_API.md) |
 | **Objective** | Build a channel-agnostic inventory management capability that serves as the single source of truth for inventory. Sales channels will subscribe to this capability. |
 
