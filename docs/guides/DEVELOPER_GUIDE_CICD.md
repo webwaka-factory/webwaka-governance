@@ -121,7 +121,39 @@ Our CI/CD pipeline is composed of several workflows that run automatically.
 
 ---
 
-## 7. Best Practices
+## 7. Known Limitations and Future Work
+
+### 7.1. CS-1 Database Dependency
+
+- **Limitation:** The integration tests for **CS-1 (Financial Ledger Service)** require a running PostgreSQL database. These tests will fail if a database is not available.
+- **Classification:** This is a service-specific environmental dependency, not a failure of the CI/CD infrastructure.
+- **Future Work:** A future infrastructure or testing wave will add automated database provisioning to the CI/CD pipeline for services that require it.
+
+---
+
+## 8. Best Practices
+
+### 8.1. General Best Practices
+
+- **Run tests locally before pushing.**
+- **Keep your PRs small and focused.**
+- **Write tests for all new code.**
+- **Do not ignore failing tests.**
+- **Review workflow logs carefully to understand failures.**
+
+### 8.2. Services with External Dependencies
+
+If your service requires external dependencies (like a database, cache, or third-party API):
+
+1. **Document the Dependency:** Clearly document the dependency in your service's README file.
+2. **Provide Mocking:** For unit tests, mock the external dependency so tests can run without it.
+3. **Isolate Integration Tests:** Place tests that require the dependency in a separate `integration` test folder.
+4. **Use Environment Variables:** Control the connection to the dependency using environment variables.
+
+### 8.3. Sandbox vs. Production CI
+
+- **Sandbox (Local):** You are responsible for setting up any required external dependencies (like running a local database).
+- **Production (GitHub Actions):** The CI/CD pipeline will eventually provide common services like databases. For now, only services without external dependencies will have their integration tests run automatically.
 
 - **Run tests locally before pushing.**
 - **Keep your PRs small and focused.**

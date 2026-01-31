@@ -237,7 +237,11 @@ This phase is considered complete when:
 - Minor configuration issues (iterate and resolve)
 - Documentation gaps (complete documentation as you go)
 
-### 2.9. Authorization
+### 2.9. Known Limitations
+
+- **CS-1 Database Dependency:** The integration tests for CS-1 require a running PostgreSQL database. This is a service-specific environmental dependency and not a failure of the CI/CD infrastructure. This will be addressed in a future infrastructure or testing wave.
+
+### 2.10. Authorization
 
 This prompt is **AUTHORIZED** for execution by Manus upon explicit Founder instruction.
 
