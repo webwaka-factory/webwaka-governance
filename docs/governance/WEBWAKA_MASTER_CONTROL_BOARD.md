@@ -6,7 +6,7 @@
 **Last Updated:** January 31, 2026  
 **Authority:** Founder
 
-> **Wave 5 Planning Complete:** Wave 5 planning has been completed and approved by the Founder. This wave focuses on three critical platform infrastructure concerns: Automated Testing & CI/CD (PF-4), API Documentation Standards (PF-5), and Platform Observability & Monitoring (ID-4). The wave will be executed in two sub-waves: Wave 5a (PF-4 and PF-5 in parallel) followed by Wave 5b (ID-4). All three phases are assigned to Manus and are fully ready for execution. Comprehensive planning package available at `/docs/planning/wave5/WAVE_5_PLANNING_PACKAGE.md`.
+> **Wave 5a Continuation Planning Complete:** Planning for the continuation of Wave 5a has been completed and approved by the Founder. This includes PF-5 (API Documentation Standards), PF-6 (Test Infrastructure Enhancements), and ID-5 (Continuous Deployment Workflows). The wave will be executed in two sub-waves: Wave 5a (PF-5 and PF-6 in parallel) followed by Wave 5b (ID-4 and ID-5 sequentially). All phases are assigned to Manus and are fully ready for execution. Comprehensive planning package available at `/docs/planning/wave5a-continuation/PHASE_STRUCTURING_ANALYSIS.md`.
 
 > **Wave 4 Execution Complete:** All five Wave 4 phases (CS-3, SC-1, SC-2, SC-3, ID-2) have been successfully implemented, verified, and are now operational. This wave marks the first execution under the new multi-repository topology and introduces the Suites layer with three comprehensive suites (Commerce, MLAS, Transport & Logistics). The platform has achieved significant milestones in IAM capabilities, partner whitelabel deployment, and sector-specific business solutions. Comprehensive verification report available at `(../planning/wave4/WAVE_4_VERIFICATION_REPORT.md)
 
@@ -373,6 +373,27 @@ This section tracks planned, but not yet started, phases.
 | **Planning Documents** | [Wave 5 Planning Package](../planning/wave5/WAVE_5_PLANNING_PACKAGE.md) |
 | **Objective** | Implement comprehensive automated testing infrastructure and CI/CD pipelines that enable continuous quality assurance across the multi-repository platform topology. Includes unit/integration/E2E test execution automation, GitHub Actions workflows, quality gates enforcement, and multi-repository test coordination. |
 
+#### PF-6: Test Infrastructure Enhancements
+
+| Axis | Value |
+| :--- | :--- |
+| **Status** | ⚪ **Planned (Wave 5a)** |
+| **Phase ID** | PF-6 |
+| **Platform Layer** | Platform Foundation |
+| **Deployment Mode** | All |
+| **Actor Scope** | Internal (Development & Operations) |
+| **Connectivity Mode** | N/A (Infrastructure) |
+| **Geographic Assumption** | Global-Ready |
+| **Execution Ownership** | Manus |
+| **Risk Class** | Infrastructure, Security |
+| **Dependencies** | PF-4 (🟢 Complete) |
+| **Execution Readiness** | ✅ Fully Specifiable Now |
+| **Blockers** | None |
+| **Assigned Platform** | Manus |
+| **Execution Wave** | Wave 5a (Parallel with PF-5) |
+| **Planning Documents** | [Wave 5a Continuation Planning](./../planning/wave5a-continuation/PHASE_STRUCTURING_ANALYSIS.md) |
+| **Objective** | Enhance the test infrastructure to remove blockers identified during PF-4 validation and improve overall test quality. This phase focuses on automated database provisioning for integration tests and improving test coverage for low-coverage services. |
+
 #### PF-5: API Documentation Standards (OpenAPI/Swagger)
 
 | Axis | Value |
@@ -625,7 +646,30 @@ This section tracks planned, but not yet started, phases.
 | **Implementation** | [sc3-transport-logistics](https://github.com/webwakaagent1/webwaka-suites/tree/main/implementations/sc3-transport-logistics) |
 | **Objective** | Build a suite for inter-city transport and logistics, including ticketing (online + agent selling), seat allocation, ticket verification, transport companies as SVMs, and motor parks as MVMs. Must support inventory sync across transport company systems, agent sellers, and marketplaces with realtime-enhanced but offline-safe operations. |
 
-### 7.6. Infrastructure & Deployment Hardening Phases
+### 7.4. Infrastructure & Deployment Phases
+
+#### ID-5: Continuous Deployment Workflows
+
+| Axis | Value |
+| :--- | :--- |
+| **Status** | ⚪ **Planned (Wave 5b)** |
+| **Phase ID** | ID-5 |
+| **Platform Layer** | Infrastructure & Deployment |
+| **Deployment Mode** | All |
+| **Actor Scope** | Internal (Development & Operations) |
+| **Connectivity Mode** | N/A (Infrastructure) |
+| **Geographic Assumption** | Global-Ready |
+| **Execution Ownership** | Manus |
+| **Risk Class** | Infrastructure, Security |
+| **Dependencies** | PF-4 (🟢 Complete), ID-2 (🟢 Complete) |
+| **Execution Readiness** | ✅ Fully Specifiable Now |
+| **Blockers** | None |
+| **Assigned Platform** | Manus |
+| **Execution Wave** | Wave 5b (Sequential after Wave 5a) |
+| **Planning Documents** | [Wave 5a Continuation Planning](./../planning/wave5a-continuation/PHASE_STRUCTURING_ANALYSIS.md) |
+| **Objective** | Extend the CI/CD pipeline into controlled Continuous Deployment (CD) for staging and production environments. This phase will automate the deployment process, enabling faster and more reliable delivery of new features and fixes. |
+
+ing Phases
 
 #### ID-1: Enterprise Deployment Automation
 
