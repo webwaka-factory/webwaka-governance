@@ -1,756 +1,752 @@
-﻿2026-01-31T11:40:15.0275064Z Current runner version: '2.331.0'
-2026-01-31T11:40:15.0299791Z ##[group]Runner Image Provisioner
-2026-01-31T11:40:15.0300569Z Hosted Compute Agent
-2026-01-31T11:40:15.0301119Z Version: 20260123.484
-2026-01-31T11:40:15.0301711Z Commit: 6bd6555ca37d84114959e1c76d2c01448ff61c5d
-2026-01-31T11:40:15.0302736Z Build Date: 2026-01-23T19:41:17Z
-2026-01-31T11:40:15.0303364Z Worker ID: {277e721d-a638-42a8-9764-8baf7cb24140}
-2026-01-31T11:40:15.0304126Z Azure Region: westus
-2026-01-31T11:40:15.0304675Z ##[endgroup]
-2026-01-31T11:40:15.0306361Z ##[group]Operating System
-2026-01-31T11:40:15.0307039Z Ubuntu
-2026-01-31T11:40:15.0307495Z 24.04.3
-2026-01-31T11:40:15.0307947Z LTS
-2026-01-31T11:40:15.0308344Z ##[endgroup]
-2026-01-31T11:40:15.0308909Z ##[group]Runner Image
-2026-01-31T11:40:15.0309481Z Image: ubuntu-24.04
-2026-01-31T11:40:15.0309932Z Version: 20260126.10.1
-2026-01-31T11:40:15.0311148Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260126.10/images/ubuntu/Ubuntu2404-Readme.md
-2026-01-31T11:40:15.0312978Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260126.10
-2026-01-31T11:40:15.0313866Z ##[endgroup]
-2026-01-31T11:40:15.0314964Z ##[group]GITHUB_TOKEN Permissions
-2026-01-31T11:40:15.0317022Z Contents: read
-2026-01-31T11:40:15.0317575Z Metadata: read
-2026-01-31T11:40:15.0318032Z Packages: read
-2026-01-31T11:40:15.0318605Z ##[endgroup]
-2026-01-31T11:40:15.0320603Z Secret source: Actions
-2026-01-31T11:40:15.0321289Z Prepare workflow directory
-2026-01-31T11:40:15.0657605Z Prepare all required actions
-2026-01-31T11:40:15.0714573Z Getting action download info
-2026-01-31T11:40:15.5167205Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
-2026-01-31T11:40:15.6346243Z Download action repository 'gaurav-nelson/github-action-markdown-link-check@v1' (SHA:5c5dfc0ac2e225883c0e5f03a85311ec2830d368)
-2026-01-31T11:40:16.3573343Z Complete job name: validate-markdown
-2026-01-31T11:40:16.4076506Z ##[group]Build container for action use: '/home/runner/work/_actions/gaurav-nelson/github-action-markdown-link-check/v1/Dockerfile'.
-2026-01-31T11:40:16.4132734Z ##[command]/usr/bin/docker build -t d074b8:5469a638f73e40afab2911c262605e9c -f "/home/runner/work/_actions/gaurav-nelson/github-action-markdown-link-check/v1/Dockerfile" "/home/runner/work/_actions/gaurav-nelson/github-action-markdown-link-check/v1"
-2026-01-31T11:40:17.0022403Z #0 building with "default" instance using docker driver
-2026-01-31T11:40:17.0023521Z 
-2026-01-31T11:40:17.0024028Z #1 [internal] load build definition from Dockerfile
-2026-01-31T11:40:17.0025281Z #1 transferring dockerfile: 204B done
-2026-01-31T11:40:17.0026315Z #1 DONE 0.0s
-2026-01-31T11:40:17.0026746Z 
-2026-01-31T11:40:17.0027414Z #2 [internal] load metadata for docker.io/library/node:lts-alpine
-2026-01-31T11:40:17.2544506Z #2 ...
-2026-01-31T11:40:17.2546071Z 
-2026-01-31T11:40:17.2547797Z #3 [auth] library/node:pull token for registry-1.docker.io
-2026-01-31T11:40:17.2554214Z #3 DONE 0.0s
-2026-01-31T11:40:17.4026389Z 
-2026-01-31T11:40:17.4027542Z #2 [internal] load metadata for docker.io/library/node:lts-alpine
-2026-01-31T11:40:17.8561428Z #2 DONE 1.0s
-2026-01-31T11:40:17.9709328Z 
-2026-01-31T11:40:17.9710436Z #4 [internal] load .dockerignore
-2026-01-31T11:40:17.9711750Z #4 transferring context: 2B done
-2026-01-31T11:40:17.9712907Z #4 DONE 0.0s
-2026-01-31T11:40:17.9713318Z 
-2026-01-31T11:40:17.9713650Z #5 [internal] load build context
-2026-01-31T11:40:17.9714656Z #5 transferring context: 4.91kB done
-2026-01-31T11:40:17.9715646Z #5 DONE 0.0s
-2026-01-31T11:40:17.9716063Z 
-2026-01-31T11:40:17.9717276Z #6 [1/4] FROM docker.io/library/node:lts-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e
-2026-01-31T11:40:17.9720596Z #6 resolve docker.io/library/node:lts-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e done
-2026-01-31T11:40:17.9723762Z #6 sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e 3.87kB / 3.87kB done
-2026-01-31T11:40:17.9726852Z #6 sha256:26eb49fbfdf03bf69f728b73178fa6f9e7c2cef88b06561b65497f5ae8e50a3d 1.72kB / 1.72kB done
-2026-01-31T11:40:17.9729393Z #6 sha256:830a00b153fccc810930d0fff2681b173fa3acc2ab8c45d8af972f50d4bcd09d 6.52kB / 6.52kB done
-2026-01-31T11:40:17.9731994Z #6 sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153 0B / 3.86MB 0.1s
-2026-01-31T11:40:17.9734458Z #6 sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 0B / 50.98MB 0.1s
-2026-01-31T11:40:17.9736919Z #6 sha256:14b92b0c10a5cc759604614d048be3aad4c013e9b574a6bff7f6fa78ac4e5860 0B / 1.26MB 0.1s
-2026-01-31T11:40:18.0967012Z #6 sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153 3.86MB / 3.86MB 0.1s done
-2026-01-31T11:40:18.0971094Z #6 sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 3.15MB / 50.98MB 0.2s
-2026-01-31T11:40:18.0975080Z #6 extracting sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153 0.1s done
-2026-01-31T11:40:18.0978467Z #6 sha256:8d660e9b10b3e184cb399d48eb01ecf741674c77553a9a4c3490696169041c5d 0B / 446B 0.2s
-2026-01-31T11:40:18.2461521Z #6 sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 36.70MB / 50.98MB 0.3s
-2026-01-31T11:40:18.2463923Z #6 sha256:14b92b0c10a5cc759604614d048be3aad4c013e9b574a6bff7f6fa78ac4e5860 1.26MB / 1.26MB 0.2s done
-2026-01-31T11:40:18.2466017Z #6 sha256:8d660e9b10b3e184cb399d48eb01ecf741674c77553a9a4c3490696169041c5d 446B / 446B 0.2s done
-2026-01-31T11:40:18.2467302Z #6 extracting sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9
-2026-01-31T11:40:18.3479566Z #6 sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 50.98MB / 50.98MB 0.4s done
-2026-01-31T11:40:19.4833217Z #6 extracting sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 1.2s done
-2026-01-31T11:40:19.6719872Z #6 extracting sha256:14b92b0c10a5cc759604614d048be3aad4c013e9b574a6bff7f6fa78ac4e5860
-2026-01-31T11:40:19.8907554Z #6 extracting sha256:14b92b0c10a5cc759604614d048be3aad4c013e9b574a6bff7f6fa78ac4e5860 0.0s done
-2026-01-31T11:40:19.8908826Z #6 extracting sha256:8d660e9b10b3e184cb399d48eb01ecf741674c77553a9a4c3490696169041c5d done
-2026-01-31T11:40:19.8909828Z #6 DONE 1.9s
-2026-01-31T11:40:19.8910042Z 
-2026-01-31T11:40:19.8910328Z #7 [2/4] RUN apk add --no-cache bash>5.0.16-r0 git>2.26.0-r0
-2026-01-31T11:40:20.4099217Z #7 DONE 0.7s
-2026-01-31T11:40:20.5428984Z 
-2026-01-31T11:40:20.5430135Z #8 [3/4] COPY entrypoint.sh /entrypoint.sh
-2026-01-31T11:40:20.5435093Z #8 DONE 0.0s
-2026-01-31T11:40:20.5435613Z 
-2026-01-31T11:40:20.5436130Z #9 [4/4] RUN chmod +x /entrypoint.sh
-2026-01-31T11:40:20.5437036Z #9 DONE 0.1s
-2026-01-31T11:40:20.6952023Z 
-2026-01-31T11:40:20.6952750Z #10 exporting to image
-2026-01-31T11:40:20.6953248Z #10 exporting layers
-2026-01-31T11:40:21.0105777Z #10 exporting layers 0.5s done
-2026-01-31T11:40:21.0306170Z #10 writing image sha256:54eb02ca4fe285c53c5e2b33992f40c8f756d5fc311bc331c9c5264eb4989089 done
-2026-01-31T11:40:21.0307797Z #10 naming to docker.io/library/d074b8:5469a638f73e40afab2911c262605e9c done
-2026-01-31T11:40:21.0310148Z #10 DONE 0.5s
-2026-01-31T11:40:21.0380990Z ##[endgroup]
-2026-01-31T11:40:21.0654009Z ##[group]Run actions/checkout@v4
-2026-01-31T11:40:21.0654570Z with:
-2026-01-31T11:40:21.0654808Z   repository: webwakaagent1/webwaka-governance
-2026-01-31T11:40:21.0655354Z   token: ***
-2026-01-31T11:40:21.0655538Z   ssh-strict: true
-2026-01-31T11:40:21.0655728Z   ssh-user: git
-2026-01-31T11:40:21.0655912Z   persist-credentials: true
-2026-01-31T11:40:21.0656167Z   clean: true
-2026-01-31T11:40:21.0656365Z   sparse-checkout-cone-mode: true
-2026-01-31T11:40:21.0656607Z   fetch-depth: 1
-2026-01-31T11:40:21.0656782Z   fetch-tags: false
-2026-01-31T11:40:21.0656972Z   show-progress: true
-2026-01-31T11:40:21.0657187Z   lfs: false
-2026-01-31T11:40:21.0657355Z   submodules: false
-2026-01-31T11:40:21.0657543Z   set-safe-directory: true
-2026-01-31T11:40:21.0657939Z ##[endgroup]
-2026-01-31T11:40:21.1735802Z Syncing repository: webwakaagent1/webwaka-governance
-2026-01-31T11:40:21.1737438Z ##[group]Getting Git version info
-2026-01-31T11:40:21.1737939Z Working directory is '/home/runner/work/webwaka-governance/webwaka-governance'
-2026-01-31T11:40:21.1738540Z [command]/usr/bin/git version
-2026-01-31T11:40:21.1761362Z git version 2.52.0
-2026-01-31T11:40:21.1786902Z ##[endgroup]
-2026-01-31T11:40:21.1800530Z Temporarily overriding HOME='/home/runner/work/_temp/b8c8ce65-25a2-4856-8ab8-29c420f71431' before making global git config changes
-2026-01-31T11:40:21.1801454Z Adding repository directory to the temporary git global config as a safe directory
-2026-01-31T11:40:21.1806280Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/webwaka-governance/webwaka-governance
-2026-01-31T11:40:21.1844524Z Deleting the contents of '/home/runner/work/webwaka-governance/webwaka-governance'
-2026-01-31T11:40:21.1847771Z ##[group]Initializing the repository
-2026-01-31T11:40:21.1851715Z [command]/usr/bin/git init /home/runner/work/webwaka-governance/webwaka-governance
-2026-01-31T11:40:21.1948771Z hint: Using 'master' as the name for the initial branch. This default branch name
-2026-01-31T11:40:21.1949698Z hint: will change to "main" in Git 3.0. To configure the initial branch name
-2026-01-31T11:40:21.1950418Z hint: to use in all of your new repositories, which will suppress this warning,
-2026-01-31T11:40:21.1950855Z hint: call:
-2026-01-31T11:40:21.1951053Z hint:
-2026-01-31T11:40:21.1951340Z hint: 	git config --global init.defaultBranch <name>
-2026-01-31T11:40:21.1951719Z hint:
-2026-01-31T11:40:21.1952347Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-2026-01-31T11:40:21.1953390Z hint: 'development'. The just-created branch can be renamed via this command:
-2026-01-31T11:40:21.1954144Z hint:
-2026-01-31T11:40:21.1954383Z hint: 	git branch -m <name>
-2026-01-31T11:40:21.1954772Z hint:
-2026-01-31T11:40:21.1955488Z hint: Disable this message with "git config set advice.defaultBranchName false"
-2026-01-31T11:40:21.1956960Z Initialized empty Git repository in /home/runner/work/webwaka-governance/webwaka-governance/.git/
-2026-01-31T11:40:21.1966418Z [command]/usr/bin/git remote add origin https://github.com/webwakaagent1/webwaka-governance
-2026-01-31T11:40:21.1999043Z ##[endgroup]
-2026-01-31T11:40:21.1999679Z ##[group]Disabling automatic garbage collection
-2026-01-31T11:40:21.2004406Z [command]/usr/bin/git config --local gc.auto 0
-2026-01-31T11:40:21.2032584Z ##[endgroup]
-2026-01-31T11:40:21.2033183Z ##[group]Setting up auth
-2026-01-31T11:40:21.2040162Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-01-31T11:40:21.2070060Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-01-31T11:40:21.2393734Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-01-31T11:40:21.2425725Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-01-31T11:40:21.2647418Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-01-31T11:40:21.2689617Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-2026-01-31T11:40:21.2913195Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-2026-01-31T11:40:21.2947708Z ##[endgroup]
-2026-01-31T11:40:21.2948647Z ##[group]Fetching the repository
-2026-01-31T11:40:21.2957179Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +673bad2d04b97dffeb4b51a550f72982cac3e553:refs/remotes/pull/1/merge
-2026-01-31T11:40:21.9287459Z From https://github.com/webwakaagent1/webwaka-governance
-2026-01-31T11:40:21.9288276Z  * [new ref]         673bad2d04b97dffeb4b51a550f72982cac3e553 -> pull/1/merge
-2026-01-31T11:40:21.9326604Z ##[endgroup]
-2026-01-31T11:40:21.9327236Z ##[group]Determining the checkout info
-2026-01-31T11:40:21.9329033Z ##[endgroup]
-2026-01-31T11:40:21.9334112Z [command]/usr/bin/git sparse-checkout disable
-2026-01-31T11:40:21.9376122Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-2026-01-31T11:40:21.9403846Z ##[group]Checking out the ref
-2026-01-31T11:40:21.9409330Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1/merge
-2026-01-31T11:40:21.9534429Z Note: switching to 'refs/remotes/pull/1/merge'.
-2026-01-31T11:40:21.9535210Z 
-2026-01-31T11:40:21.9538564Z You are in 'detached HEAD' state. You can look around, make experimental
-2026-01-31T11:40:21.9539370Z changes and commit them, and you can discard any commits you make in this
-2026-01-31T11:40:21.9539989Z state without impacting any branches by switching back to a branch.
-2026-01-31T11:40:21.9540294Z 
-2026-01-31T11:40:21.9540522Z If you want to create a new branch to retain commits you create, you may
-2026-01-31T11:40:21.9541066Z do so (now or later) by using -c with the switch command. Example:
-2026-01-31T11:40:21.9541343Z 
-2026-01-31T11:40:21.9541486Z   git switch -c <new-branch-name>
-2026-01-31T11:40:21.9541686Z 
-2026-01-31T11:40:21.9542001Z Or undo this operation with:
-2026-01-31T11:40:21.9542213Z 
-2026-01-31T11:40:21.9542338Z   git switch -
-2026-01-31T11:40:21.9542502Z 
-2026-01-31T11:40:21.9542733Z Turn off this advice by setting config variable advice.detachedHead to false
-2026-01-31T11:40:21.9543069Z 
-2026-01-31T11:40:21.9543432Z HEAD is now at 673bad2 Merge fbc0110de43898d7628fe8cb32551c9598c0624f into e50aa13ade93b4e914fb6cb0658b7f54a485106d
-2026-01-31T11:40:21.9545056Z ##[endgroup]
-2026-01-31T11:40:21.9589693Z [command]/usr/bin/git log -1 --format=%H
-2026-01-31T11:40:21.9615031Z 673bad2d04b97dffeb4b51a550f72982cac3e553
-2026-01-31T11:40:21.9828050Z ##[group]Run gaurav-nelson/github-action-markdown-link-check@v1
-2026-01-31T11:40:21.9828420Z with:
-2026-01-31T11:40:21.9828608Z   use-quiet-mode: yes
-2026-01-31T11:40:21.9828873Z   config-file: .github/markdown-link-check-config.json
-2026-01-31T11:40:21.9829168Z   use-verbose-mode: no
-2026-01-31T11:40:21.9829364Z   folder-path: .
-2026-01-31T11:40:21.9829540Z   max-depth: -1
-2026-01-31T11:40:21.9829733Z   check-modified-files-only: no
-2026-01-31T11:40:21.9829949Z   base-branch: master
-2026-01-31T11:40:21.9830136Z   file-extension: .md
-2026-01-31T11:40:21.9830313Z ##[endgroup]
-2026-01-31T11:40:21.9938573Z ##[command]/usr/bin/docker run --name d074b85469a638f73e40afab2911c262605e9c_d0b5b1 --label d074b8 --workdir /github/workspace --rm -e "INPUT_USE-QUIET-MODE" -e "INPUT_CONFIG-FILE" -e "INPUT_USE-VERBOSE-MODE" -e "INPUT_FOLDER-PATH" -e "INPUT_MAX-DEPTH" -e "INPUT_CHECK-MODIFIED-FILES-ONLY" -e "INPUT_BASE-BRANCH" -e "INPUT_FILE-EXTENSION" -e "INPUT_FILE-PATH" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp":"/github/runner_temp" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/webwaka-governance/webwaka-governance":"/github/workspace" d074b8:5469a638f73e40afab2911c262605e9c  "yes" "no" ".github/markdown-link-check-config.json" "." "-1" "no" "master" ".md" ""
-2026-01-31T11:40:23.9501374Z npm warn deprecated har-validator@5.1.5: this library is no longer supported
-2026-01-31T11:40:23.9988761Z npm warn deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-2026-01-31T11:40:24.0305573Z npm warn deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
-2026-01-31T11:40:24.2589491Z 
-2026-01-31T11:40:24.2590118Z added 65 packages in 2s
-2026-01-31T11:40:24.2590466Z 
-2026-01-31T11:40:24.2592175Z 5 packages are looking for funding
-2026-01-31T11:40:24.2592673Z   run `npm fund` for details
-2026-01-31T11:40:24.3292376Z [0;34mUsing markdown-link-check configuration file: [0;33m.github/markdown-link-check-config.json[0m
-2026-01-31T11:40:24.3293284Z [0;34mUSE_QUIET_MODE: yes[0m
-2026-01-31T11:40:24.3369825Z [0;34mUSE_VERBOSE_MODE: no[0m
-2026-01-31T11:40:24.3370608Z [0;34mFOLDER_PATH: .[0m
-2026-01-31T11:40:24.3371020Z [0;34mMAX_DEPTH: -1[0m
-2026-01-31T11:40:24.3371433Z [0;34mCHECK_MODIFIED_FILES: no[0m
-2026-01-31T11:40:24.3372006Z [0;34mFILE_EXTENSION: .md[0m
-2026-01-31T11:40:24.3372392Z [0;34mFILE_PATH: [0m
-2026-01-31T11:40:24.3373238Z + find . -name '*.md' -not -path './node_modules/*' -exec markdown-link-check '{}' --config .github/markdown-link-check-config.json -q ';'
-2026-01-31T11:40:51.7244674Z + set +x
-2026-01-31T11:40:51.7254275Z [0;33m=========================> MARKDOWN LINK CHECK <=========================[0m
-2026-01-31T11:40:51.7260157Z 
-2026-01-31T11:40:51.7261234Z FILE: ./README.md
-2026-01-31T11:40:51.7261475Z 
-2026-01-31T11:40:51.7261601Z 0 links checked.
-2026-01-31T11:40:51.7262023Z 
-2026-01-31T11:40:51.7262236Z FILE: ./docs/runbooks/CB4_INVENTORY_OPERATIONS.md
-2026-01-31T11:40:51.7262597Z 
-2026-01-31T11:40:51.7262718Z 0 links checked.
-2026-01-31T11:40:51.7262903Z 
-2026-01-31T11:40:51.7263091Z FILE: ./docs/runbooks/CS4_BILLING_CYCLES.md
-2026-01-31T11:40:51.7263415Z 
-2026-01-31T11:40:51.7263532Z 0 links checked.
-2026-01-31T11:40:51.7263718Z 
-2026-01-31T11:40:51.7263880Z FILE: ./docs/runbooks/CS4_PRICING_MODELS.md
-2026-01-31T11:40:51.7264189Z 
-2026-01-31T11:40:51.7264302Z 0 links checked.
-2026-01-31T11:40:51.7264492Z 
-2026-01-31T11:40:51.7264663Z FILE: ./docs/runbooks/CS4_TROUBLESHOOTING.md
-2026-01-31T11:40:51.7265001Z 
-2026-01-31T11:40:51.7265125Z 0 links checked.
-2026-01-31T11:40:51.7265303Z 
-2026-01-31T11:40:51.7265480Z FILE: ./docs/api/CS4_PRICING_BILLING_API.md
-2026-01-31T11:40:51.7265802Z 
-2026-01-31T11:40:51.7265919Z 0 links checked.
-2026-01-31T11:40:51.7266112Z 
-2026-01-31T11:40:51.7266261Z FILE: ./docs/api/CB4_INVENTORY_API.md
-2026-01-31T11:40:51.7266554Z 
-2026-01-31T11:40:51.7266668Z 0 links checked.
-2026-01-31T11:40:51.7267771Z 
-2026-01-31T11:40:51.7268044Z FILE: ./docs/v3/PLATFORM_IMPLEMENTATION_FRAMEWORK_V3.md
-2026-01-31T11:40:51.7268432Z 
-2026-01-31T11:40:51.7268556Z 0 links checked.
-2026-01-31T11:40:51.7268856Z 
-2026-01-31T11:40:51.7269090Z FILE: ./docs/architecture/ARCH_CB2_REPORTING_ANALYTICS.md
-2026-01-31T11:40:51.7269888Z (node:107) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7270814Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7271303Z 
-2026-01-31T11:40:51.7271428Z 1 links checked.
-2026-01-31T11:40:51.7271612Z 
-2026-01-31T11:40:51.7272040Z FILE: ./docs/architecture/ARCH_00_CAPABILITY_DEPENDENCY_MAPS.md
-2026-01-31T11:40:51.7272476Z 
-2026-01-31T11:40:51.7272603Z 0 links checked.
-2026-01-31T11:40:51.7272784Z 
-2026-01-31T11:40:51.7273222Z FILE: ./docs/architecture/ARCH_PF2_REALTIME_EVENTING.md
-2026-01-31T11:40:51.7273600Z 
-2026-01-31T11:40:51.7273717Z 0 links checked.
-2026-01-31T11:40:51.7273897Z 
-2026-01-31T11:40:51.7274073Z FILE: ./docs/architecture/ARCH_CB1_MLAS.md
-2026-01-31T11:40:51.7274785Z (node:140) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7275683Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7276412Z [✖] ../runbooks/RUNBOOK_CB1_MLAS.md
-2026-01-31T11:40:51.7276865Z [✖] ../api/API_CB1_MLAS.md
-2026-01-31T11:40:51.7277273Z [✖] ../adrs/ADR_COMMISSION_ENGINE.md
-2026-01-31T11:40:51.7277540Z 
-2026-01-31T11:40:51.7277654Z 5 links checked.
-2026-01-31T11:40:51.7277833Z 
-2026-01-31T11:40:51.7277959Z ERROR: 3 dead links found!
-2026-01-31T11:40:51.7278479Z [✖] ../runbooks/RUNBOOK_CB1_MLAS.md → Status: 400
-2026-01-31T11:40:51.7279023Z [✖] ../api/API_CB1_MLAS.md → Status: 400
-2026-01-31T11:40:51.7279539Z [✖] ../adrs/ADR_COMMISSION_ENGINE.md → Status: 400
-2026-01-31T11:40:51.7279872Z 
-2026-01-31T11:40:51.7280122Z FILE: ./docs/architecture/ARCH_PF1_FOUNDATIONAL_EXTENSIONS.md
-2026-01-31T11:40:51.7281132Z (node:151) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7282197Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7282657Z 
-2026-01-31T11:40:51.7282772Z 7 links checked.
-2026-01-31T11:40:51.7282934Z 
-2026-01-31T11:40:51.7283121Z FILE: ./docs/architecture/ARCH_CS4_PRICING_BILLING.md
-2026-01-31T11:40:51.7283823Z (node:162) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7284652Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7285131Z 
-2026-01-31T11:40:51.7285252Z 3 links checked.
-2026-01-31T11:40:51.7285670Z 
-2026-01-31T11:40:51.7286784Z FILE: ./docs/architecture/ARCH_CB4_INVENTORY_MANAGEMENT.md
-2026-01-31T11:40:51.7287614Z (node:173) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7288453Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7288927Z 
-2026-01-31T11:40:51.7289050Z 3 links checked.
-2026-01-31T11:40:51.7289249Z 
-2026-01-31T11:40:51.7289389Z FILE: ./docs/architecture/ARCH_PF4_TESTING_CICD.md
-2026-01-31T11:40:51.7289605Z 
-2026-01-31T11:40:51.7289674Z 0 links checked.
-2026-01-31T11:40:51.7289795Z 
-2026-01-31T11:40:51.7289976Z FILE: ./docs/architecture/ARCH_CS1_FINANCIAL_LEDGER.md
-2026-01-31T11:40:51.7290522Z (node:195) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7291241Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7291528Z 
-2026-01-31T11:40:51.7291654Z 12 links checked.
-2026-01-31T11:40:51.7292657Z 
-2026-01-31T11:40:51.7293010Z FILE: ./docs/architecture/ARCH_CB3_CONTENT_MANAGEMENT.md
-2026-01-31T11:40:51.7293611Z (node:206) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7294179Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7294529Z 
-2026-01-31T11:40:51.7294599Z 1 links checked.
-2026-01-31T11:40:51.7294707Z 
-2026-01-31T11:40:51.7294844Z FILE: ./docs/architecture/ARCH_PF3_AI_HIGH_COMPLEXITY.md
-2026-01-31T11:40:51.7295151Z 
-2026-01-31T11:40:51.7295221Z 0 links checked.
-2026-01-31T11:40:51.7295332Z 
-2026-01-31T11:40:51.7295463Z FILE: ./docs/architecture/ARCH_CS2_NOTIFICATION_SERVICE.md
-2026-01-31T11:40:51.7296032Z (node:228) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7296569Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7297155Z [✖] ../../phases/CS-2_NOTIFICATION_SERVICE.md
-2026-01-31T11:40:51.7297808Z [✖] ../../governance/WEBWAKA_MASTER_CONTROL_BOARD.md#cs-2-notification-service
-2026-01-31T11:40:51.7298129Z 
-2026-01-31T11:40:51.7298478Z 2 links checked.
-2026-01-31T11:40:51.7298605Z 
-2026-01-31T11:40:51.7298695Z ERROR: 2 dead links found!
-2026-01-31T11:40:51.7299046Z [✖] ../../phases/CS-2_NOTIFICATION_SERVICE.md → Status: 400
-2026-01-31T11:40:51.7299695Z [✖] ../../governance/WEBWAKA_MASTER_CONTROL_BOARD.md#cs-2-notification-service → Status: 400
-2026-01-31T11:40:51.7300182Z 
-2026-01-31T11:40:51.7300315Z FILE: ./docs/phases/CB-1_MLAS_CAPABILITY.md
-2026-01-31T11:40:51.7300532Z 
-2026-01-31T11:40:51.7300602Z 0 links checked.
-2026-01-31T11:40:51.7300733Z 
-2026-01-31T11:40:51.7300948Z FILE: ./docs/phases/CB-4_INVENTORY_MANAGEMENT_CAPABILITY.md
-2026-01-31T11:40:51.7301178Z 
-2026-01-31T11:40:51.7301245Z 0 links checked.
-2026-01-31T11:40:51.7301349Z 
-2026-01-31T11:40:51.7301470Z FILE: ./docs/phases/CS-4_PRICING_BILLING_SERVICE.md
-2026-01-31T11:40:51.7301766Z 
-2026-01-31T11:40:51.7302032Z 0 links checked.
-2026-01-31T11:40:51.7302213Z 
-2026-01-31T11:40:51.7302440Z FILE: ./docs/phases/ID-1_ENTERPRISE_DEPLOYMENT_AUTOMATION.md
-2026-01-31T11:40:51.7302757Z 
-2026-01-31T11:40:51.7302874Z 0 links checked.
-2026-01-31T11:40:51.7303000Z 
-2026-01-31T11:40:51.7303155Z FILE: ./docs/phases/SC-3_TRANSPORTATION_LOGISTICS_SUITE_V1.md
-2026-01-31T11:40:51.7303386Z 
-2026-01-31T11:40:51.7303463Z 0 links checked.
-2026-01-31T11:40:51.7303651Z 
-2026-01-31T11:40:51.7303787Z FILE: ./docs/phases/CS-1_FINANCIAL_LEDGER_SERVICE.md
-2026-01-31T11:40:51.7304241Z (node:294) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7304872Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7305218Z 
-2026-01-31T11:40:51.7305314Z 1 links checked.
-2026-01-31T11:40:51.7305421Z 
-2026-01-31T11:40:51.7305558Z FILE: ./docs/phases/PF-3_AI_HIGH_COMPLEXITY_READINESS.md
-2026-01-31T11:40:51.7305844Z 
-2026-01-31T11:40:51.7305963Z 0 links checked.
-2026-01-31T11:40:51.7306275Z 
-2026-01-31T11:40:51.7306418Z FILE: ./docs/phases/CB-2_REPORTING_ANALYTICS_CAPABILITY.md
-2026-01-31T11:40:51.7307005Z (node:316) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7307816Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7308229Z 
-2026-01-31T11:40:51.7308339Z 1 links checked.
-2026-01-31T11:40:51.7308508Z 
-2026-01-31T11:40:51.7308682Z FILE: ./docs/phases/PF-1_FOUNDATIONAL_EXTENSIONS.md
-2026-01-31T11:40:51.7309372Z (node:327) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7310852Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7311688Z [✖] /docs/architecture/ARCH_PF1_FOUNDATIONAL_EXTENSIONS.md
-2026-01-31T11:40:51.7314187Z [✖] /implementations/pf1-foundational-extensions/IMPLEMENTATION_SUMMARY.md
-2026-01-31T11:40:51.7315184Z [✖] /implementations/pf1-foundational-extensions/docs/API_SUPER_ADMIN_CONTROL_PLANE.md
-2026-01-31T11:40:51.7316218Z [✖] /implementations/pf1-foundational-extensions/docs/RUNBOOK_INSTANCE_PROVISIONING.md
-2026-01-31T11:40:51.7317036Z [✖] /implementations/pf1-foundational-extensions/docs/RUNBOOK_UPGRADE_MANAGEMENT.md
-2026-01-31T11:40:51.7317647Z 
-2026-01-31T11:40:51.7317785Z 6 links checked.
-2026-01-31T11:40:51.7317964Z 
-2026-01-31T11:40:51.7318083Z ERROR: 5 dead links found!
-2026-01-31T11:40:51.7318792Z [✖] /docs/architecture/ARCH_PF1_FOUNDATIONAL_EXTENSIONS.md → Status: 400
-2026-01-31T11:40:51.7319791Z [✖] /implementations/pf1-foundational-extensions/IMPLEMENTATION_SUMMARY.md → Status: 400
-2026-01-31T11:40:51.7320685Z [✖] /implementations/pf1-foundational-extensions/docs/API_SUPER_ADMIN_CONTROL_PLANE.md → Status: 400
-2026-01-31T11:40:51.7321549Z [✖] /implementations/pf1-foundational-extensions/docs/RUNBOOK_INSTANCE_PROVISIONING.md → Status: 400
-2026-01-31T11:40:51.7322818Z [✖] /implementations/pf1-foundational-extensions/docs/RUNBOOK_UPGRADE_MANAGEMENT.md → Status: 400
-2026-01-31T11:40:51.7323499Z 
-2026-01-31T11:40:51.7323718Z FILE: ./docs/phases/PF-5_API_DOCUMENTATION_OPENAPI.md
-2026-01-31T11:40:51.7324511Z 
-2026-01-31T11:40:51.7324640Z 0 links checked.
-2026-01-31T11:40:51.7324829Z 
-2026-01-31T11:40:51.7324970Z FILE: ./docs/phases/CS-3_IAM_V2.md
-2026-01-31T11:40:51.7325640Z (node:349) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7326438Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7326807Z 
-2026-01-31T11:40:51.7326875Z 1 links checked.
-2026-01-31T11:40:51.7327023Z 
-2026-01-31T11:40:51.7327186Z FILE: ./docs/phases/SC-2_MLAS_SUITE_V1.md
-2026-01-31T11:40:51.7327498Z 
-2026-01-31T11:40:51.7327615Z 0 links checked.
-2026-01-31T11:40:51.7327797Z 
-2026-01-31T11:40:51.7327993Z FILE: ./docs/phases/PF-4_AUTOMATED_TESTING_CICD.md
-2026-01-31T11:40:51.7328752Z (node:371) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7329684Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7330518Z [✖] ../planning/wave5/BRANCH_PROTECTION_CONFIG.md
-2026-01-31T11:40:51.7330791Z 
-2026-01-31T11:40:51.7330861Z 9 links checked.
-2026-01-31T11:40:51.7330969Z 
-2026-01-31T11:40:51.7331054Z ERROR: 1 dead links found!
-2026-01-31T11:40:51.7331519Z [✖] ../planning/wave5/BRANCH_PROTECTION_CONFIG.md → Status: 400
-2026-01-31T11:40:51.7331758Z 
-2026-01-31T11:40:51.7332112Z FILE: ./docs/phases/SC-1_COMMERCE_SUITE_V1.md
-2026-01-31T11:40:51.7332340Z 
-2026-01-31T11:40:51.7332407Z 0 links checked.
-2026-01-31T11:40:51.7332519Z 
-2026-01-31T11:40:51.7332656Z FILE: ./docs/phases/CB-3_CONTENT_MANAGEMENT_CAPABILITY.md
-2026-01-31T11:40:51.7333218Z (node:393) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7333823Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7334137Z 
-2026-01-31T11:40:51.7334263Z 1 links checked.
-2026-01-31T11:40:51.7334673Z 
-2026-01-31T11:40:51.7334845Z FILE: ./docs/phases/ID-3_GLOBAL_EXPANSION_MULTI_REGION.md
-2026-01-31T11:40:51.7335087Z 
-2026-01-31T11:40:51.7335156Z 0 links checked.
-2026-01-31T11:40:51.7335264Z 
-2026-01-31T11:40:51.7335411Z FILE: ./docs/phases/PF-2_REALTIME_EVENTING_INFRASTRUCTURE.md
-2026-01-31T11:40:51.7335645Z 
-2026-01-31T11:40:51.7335711Z 0 links checked.
-2026-01-31T11:40:51.7335814Z 
-2026-01-31T11:40:51.7335921Z FILE: ./docs/phases/CS-2_NOTIFICATION_SERVICE.md
-2026-01-31T11:40:51.7336350Z (node:426) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7336870Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7337142Z 
-2026-01-31T11:40:51.7337208Z 1 links checked.
-2026-01-31T11:40:51.7337321Z 
-2026-01-31T11:40:51.7337430Z FILE: ./docs/reports/DECISION_5_IMPACT_ANALYSIS.md
-2026-01-31T11:40:51.7337625Z 
-2026-01-31T11:40:51.7337690Z 0 links checked.
-2026-01-31T11:40:51.7337804Z 
-2026-01-31T11:40:51.7337915Z FILE: ./docs/reports/DECISION_8_IMPACT_ANALYSIS.md
-2026-01-31T11:40:51.7338110Z 
-2026-01-31T11:40:51.7338182Z 0 links checked.
-2026-01-31T11:40:51.7338288Z 
-2026-01-31T11:40:51.7338427Z FILE: ./docs/reports/DECISION_3_AMENDMENT_IMPACT_ANALYSIS.md
-2026-01-31T11:40:51.7338657Z 
-2026-01-31T11:40:51.7338723Z 0 links checked.
-2026-01-31T11:40:51.7338823Z 
-2026-01-31T11:40:51.7338929Z FILE: ./docs/reports/DECISION_6_IMPACT_ANALYSIS.md
-2026-01-31T11:40:51.7339124Z 
-2026-01-31T11:40:51.7339186Z 0 links checked.
-2026-01-31T11:40:51.7339291Z 
-2026-01-31T11:40:51.7339428Z FILE: ./docs/reports/ARTIFACT_RECONCILIATION_CHANGELOG.md
-2026-01-31T11:40:51.7339651Z 
-2026-01-31T11:40:51.7339716Z 0 links checked.
-2026-01-31T11:40:51.7339815Z 
-2026-01-31T11:40:51.7339927Z FILE: ./docs/reports/DECISION_7_IMPACT_ANALYSIS.md
-2026-01-31T11:40:51.7340114Z 
-2026-01-31T11:40:51.7340178Z 0 links checked.
-2026-01-31T11:40:51.7340278Z 
-2026-01-31T11:40:51.7340388Z FILE: ./docs/reports/DECISION_4_IMPACT_ANALYSIS.md
-2026-01-31T11:40:51.7340579Z 
-2026-01-31T11:40:51.7340643Z 0 links checked.
-2026-01-31T11:40:51.7340748Z 
-2026-01-31T11:40:51.7340841Z FILE: ./docs/guides/DEVELOPER_GUIDE_CICD.md
-2026-01-31T11:40:51.7341142Z 
-2026-01-31T11:40:51.7341213Z 0 links checked.
-2026-01-31T11:40:51.7341314Z 
-2026-01-31T11:40:51.7341416Z FILE: ./docs/guides/BRANCH_PROTECTION_CONFIG.md
-2026-01-31T11:40:51.7341603Z 
-2026-01-31T11:40:51.7341676Z 0 links checked.
-2026-01-31T11:40:51.7341773Z 
-2026-01-31T11:40:51.7342157Z FILE: ./docs/decisions/DECISION_AREA_2_EXECUTION_MODEL.md
-2026-01-31T11:40:51.7342524Z 
-2026-01-31T11:40:51.7342630Z 0 links checked.
-2026-01-31T11:40:51.7342732Z 
-2026-01-31T11:40:51.7342864Z FILE: ./docs/decisions/DECISION_AREA_1_REPO_STRUCTURE.md
-2026-01-31T11:40:51.7343086Z 
-2026-01-31T11:40:51.7343150Z 0 links checked.
-2026-01-31T11:40:51.7343252Z 
-2026-01-31T11:40:51.7343415Z FILE: ./docs/decisions/DECISION_AREA_3_DOC_PROMPT_ARCHITECTURE.md
-2026-01-31T11:40:51.7343982Z (node:558) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7344516Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7344927Z [✖] link/to/mcb#sc-1
-2026-01-31T11:40:51.7345048Z 
-2026-01-31T11:40:51.7345114Z 1 links checked.
-2026-01-31T11:40:51.7345218Z 
-2026-01-31T11:40:51.7345298Z ERROR: 1 dead links found!
-2026-01-31T11:40:51.7345543Z [✖] link/to/mcb#sc-1 → Status: 400
-2026-01-31T11:40:51.7345699Z 
-2026-01-31T11:40:51.7345847Z FILE: ./docs/decisions/PLATFORM_EXECUTION_OPERATING_MODEL.md
-2026-01-31T11:40:51.7346075Z 
-2026-01-31T11:40:51.7346140Z 0 links checked.
-2026-01-31T11:40:51.7346247Z 
-2026-01-31T11:40:51.7346369Z FILE: ./docs/governance/PROMPT_INVARIANT_CHECKLIST.md
-2026-01-31T11:40:51.7346575Z 
-2026-01-31T11:40:51.7346638Z 0 links checked.
-2026-01-31T11:40:51.7346746Z 
-2026-01-31T11:40:51.7346868Z FILE: ./docs/governance/WEBWAKA_MASTER_CONTROL_BOARD.md
-2026-01-31T11:40:51.7347465Z (node:591) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7348001Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7348439Z [✖] /docs/architecture/ARCH_CS4_PRICING_BILLING.md
-2026-01-31T11:40:51.7348796Z [✖] /docs/architecture/ARCH_CB2_REPORTING_ANALYTICS.md
-2026-01-31T11:40:51.7349173Z [✖] /docs/architecture/ARCH_CB4_INVENTORY_MANAGEMENT.md
-2026-01-31T11:40:51.7349497Z [✖] /docs/api/CB4_INVENTORY_API.md
-2026-01-31T11:40:51.7349661Z 
-2026-01-31T11:40:51.7349732Z 22 links checked.
-2026-01-31T11:40:51.7349838Z 
-2026-01-31T11:40:51.7349921Z ERROR: 4 dead links found!
-2026-01-31T11:40:51.7350248Z [✖] /docs/architecture/ARCH_CS4_PRICING_BILLING.md → Status: 400
-2026-01-31T11:40:51.7350707Z [✖] /docs/architecture/ARCH_CB2_REPORTING_ANALYTICS.md → Status: 400
-2026-01-31T11:40:51.7351165Z [✖] /docs/architecture/ARCH_CB4_INVENTORY_MANAGEMENT.md → Status: 400
-2026-01-31T11:40:51.7351557Z [✖] /docs/api/CB4_INVENTORY_API.md → Status: 400
-2026-01-31T11:40:51.7351746Z 
-2026-01-31T11:40:51.7352063Z FILE: ./docs/governance/PROMPTS_AS_ARTIFACTS_MODEL.md
-2026-01-31T11:40:51.7352285Z 
-2026-01-31T11:40:51.7352350Z 0 links checked.
-2026-01-31T11:40:51.7352460Z 
-2026-01-31T11:40:51.7352595Z FILE: ./docs/governance/POST_MIGRATION_OPERATING_RULES.md
-2026-01-31T11:40:51.7352810Z 
-2026-01-31T11:40:51.7352883Z 0 links checked.
-2026-01-31T11:40:51.7352993Z 
-2026-01-31T11:40:51.7353149Z FILE: ./docs/planning/wave4/CROSS_PHASE_GOVERNANCE_VERIFICATION.md
-2026-01-31T11:40:51.7353397Z 
-2026-01-31T11:40:51.7353462Z 0 links checked.
-2026-01-31T11:40:51.7353568Z 
-2026-01-31T11:40:51.7353694Z FILE: ./docs/planning/wave4/PROMPT_SC-1_COMMERCE_SUITE.md
-2026-01-31T11:40:51.7353906Z 
-2026-01-31T11:40:51.7353977Z 0 links checked.
-2026-01-31T11:40:51.7354075Z 
-2026-01-31T11:40:51.7354190Z FILE: ./docs/planning/wave4/WAVE_4_PLANNING_REPORT.md
-2026-01-31T11:40:51.7354396Z 
-2026-01-31T11:40:51.7354459Z 0 links checked.
-2026-01-31T11:40:51.7354638Z 
-2026-01-31T11:40:51.7354901Z FILE: ./docs/planning/wave4/PROMPT_SC-3_TRANSPORT_LOGISTICS.md
-2026-01-31T11:40:51.7355324Z 
-2026-01-31T11:40:51.7355451Z 1 links checked.
-2026-01-31T11:40:51.7355614Z 
-2026-01-31T11:40:51.7355928Z FILE: ./docs/planning/wave4/WAVE_4_EXECUTION_READINESS_GAPS.md
-2026-01-31T11:40:51.7356187Z 
-2026-01-31T11:40:51.7356311Z 0 links checked.
-2026-01-31T11:40:51.7356468Z 
-2026-01-31T11:40:51.7356558Z FILE: ./docs/planning/wave4/README.md
-2026-01-31T11:40:51.7356731Z 
-2026-01-31T11:40:51.7356795Z 0 links checked.
-2026-01-31T11:40:51.7356896Z 
-2026-01-31T11:40:51.7357022Z FILE: ./docs/planning/wave4/WAVE_4_PLATFORM_ASSIGNMENT.md
-2026-01-31T11:40:51.7357328Z 
-2026-01-31T11:40:51.7357393Z 0 links checked.
-2026-01-31T11:40:51.7357493Z 
-2026-01-31T11:40:51.7357621Z FILE: ./docs/planning/wave4/WAVE_4_VERIFICATION_REPORT.md
-2026-01-31T11:40:51.7357926Z 
-2026-01-31T11:40:51.7358045Z 0 links checked.
-2026-01-31T11:40:51.7358155Z 
-2026-01-31T11:40:51.7358298Z FILE: ./docs/planning/wave4/PROMPT_ID-2_PARTNER_WHITELABEL.md
-2026-01-31T11:40:51.7358529Z 
-2026-01-31T11:40:51.7358598Z 0 links checked.
-2026-01-31T11:40:51.7358720Z 
-2026-01-31T11:40:51.7358887Z FILE: ./docs/planning/wave4/WAVE_4_MCB_UPDATES.md
-2026-01-31T11:40:51.7359095Z 
-2026-01-31T11:40:51.7359165Z 0 links checked.
-2026-01-31T11:40:51.7359294Z 
-2026-01-31T11:40:51.7359396Z FILE: ./docs/planning/wave4/PROMPT_CS-3_IAM_V2.md
-2026-01-31T11:40:51.7359671Z 
-2026-01-31T11:40:51.7359737Z 1 links checked.
-2026-01-31T11:40:51.7359837Z 
-2026-01-31T11:40:51.7359955Z FILE: ./docs/planning/wave4/PROMPT_SC-2_MLAS_SUITE.md
-2026-01-31T11:40:51.7360162Z 
-2026-01-31T11:40:51.7360226Z 0 links checked.
-2026-01-31T11:40:51.7360344Z 
-2026-01-31T11:40:51.7360560Z FILE: ./docs/planning/wave4/WAVE_4_CANDIDATE_PHASES.md
-2026-01-31T11:40:51.7360807Z 
-2026-01-31T11:40:51.7360871Z 0 links checked.
-2026-01-31T11:40:51.7360970Z 
-2026-01-31T11:40:51.7361133Z FILE: ./docs/planning/02_WEBWAKA_MASTER_IMPLEMENTATION_PLAN.md
-2026-01-31T11:40:51.7361486Z 
-2026-01-31T11:40:51.7361553Z 0 links checked.
-2026-01-31T11:40:51.7361658Z 
-2026-01-31T11:40:51.7362085Z FILE: ./docs/planning/wave3/WAVE_3_PLANNING_REPORT.md
-2026-01-31T11:40:51.7362365Z 
-2026-01-31T11:40:51.7362441Z 0 links checked.
-2026-01-31T11:40:51.7362557Z 
-2026-01-31T11:40:51.7362677Z FILE: ./docs/planning/wave3/WAVE_3_READINESS_GAPS.md
-2026-01-31T11:40:51.7362885Z 
-2026-01-31T11:40:51.7362956Z 0 links checked.
-2026-01-31T11:40:51.7363056Z 
-2026-01-31T11:40:51.7363162Z FILE: ./docs/planning/wave3/WAVE_3_MCB_UPDATES.md
-2026-01-31T11:40:51.7363362Z 
-2026-01-31T11:40:51.7363424Z 0 links checked.
-2026-01-31T11:40:51.7363522Z 
-2026-01-31T11:40:51.7363668Z FILE: ./docs/planning/wave3/WAVE_3_PARALLELIZATION_ANALYSIS.md
-2026-01-31T11:40:51.7363913Z 
-2026-01-31T11:40:51.7363977Z 0 links checked.
-2026-01-31T11:40:51.7364076Z 
-2026-01-31T11:40:51.7364208Z FILE: ./docs/planning/wave3/WAVE_3_PLATFORM_ASSIGNMENT.md
-2026-01-31T11:40:51.7364425Z 
-2026-01-31T11:40:51.7364489Z 0 links checked.
-2026-01-31T11:40:51.7364592Z 
-2026-01-31T11:40:51.7364707Z FILE: ./docs/planning/wave3/WAVE_3_CANDIDATE_PHASES.md
-2026-01-31T11:40:51.7364916Z 
-2026-01-31T11:40:51.7364980Z 0 links checked.
-2026-01-31T11:40:51.7365083Z 
-2026-01-31T11:40:51.7365305Z FILE: ./docs/planning/repository-topology-migration/PHASE_2_EXECUTION_PROMPT.md
-2026-01-31T11:40:51.7365630Z 
-2026-01-31T11:40:51.7365701Z 2 links checked.
-2026-01-31T11:40:51.7365801Z 
-2026-01-31T11:40:51.7366047Z FILE: ./docs/planning/repository-topology-migration/REPOSITORY_TOPOLOGY_MIGRATION_PLAN.md
-2026-01-31T11:40:51.7366401Z 
-2026-01-31T11:40:51.7366464Z 0 links checked.
-2026-01-31T11:40:51.7366564Z 
-2026-01-31T11:40:51.7366779Z FILE: ./docs/planning/repository-topology-migration/PHASE_5_MIGRATION_STRATEGY.md
-2026-01-31T11:40:51.7367098Z 
-2026-01-31T11:40:51.7367162Z 0 links checked.
-2026-01-31T11:40:51.7367260Z 
-2026-01-31T11:40:51.7367485Z FILE: ./docs/planning/repository-topology-migration/MIGRATION_COMPLETION_REPORT.md
-2026-01-31T11:40:51.7367811Z 
-2026-01-31T11:40:51.7367875Z 6 links checked.
-2026-01-31T11:40:51.7367978Z 
-2026-01-31T11:40:51.7368190Z FILE: ./docs/planning/repository-topology-migration/PHASE_2_MIGRATION_STRATEGY.md
-2026-01-31T11:40:51.7368500Z 
-2026-01-31T11:40:51.7368565Z 0 links checked.
-2026-01-31T11:40:51.7368791Z 
-2026-01-31T11:40:51.7368995Z FILE: ./docs/planning/repository-topology-migration/PHASE_1_EXECUTION_PROMPT.md
-2026-01-31T11:40:51.7369298Z 
-2026-01-31T11:40:51.7369368Z 1 links checked.
-2026-01-31T11:40:51.7369467Z 
-2026-01-31T11:40:51.7369680Z FILE: ./docs/planning/repository-topology-migration/PHASE_3_MIGRATION_STRATEGY.md
-2026-01-31T11:40:51.7369990Z 
-2026-01-31T11:40:51.7370055Z 0 links checked.
-2026-01-31T11:40:51.7370153Z 
-2026-01-31T11:40:51.7370353Z FILE: ./docs/planning/repository-topology-migration/PHASE_3_EXECUTION_PROMPT.md
-2026-01-31T11:40:51.7370661Z 
-2026-01-31T11:40:51.7370726Z 1 links checked.
-2026-01-31T11:40:51.7370823Z 
-2026-01-31T11:40:51.7371081Z FILE: ./docs/planning/repository-topology-migration/EXECUTION_MODEL_IMPACT_RISK_ANALYSIS.md
-2026-01-31T11:40:51.7371434Z 
-2026-01-31T11:40:51.7371497Z 0 links checked.
-2026-01-31T11:40:51.7371607Z 
-2026-01-31T11:40:51.7371755Z FILE: ./docs/planning/repository-topology-migration/README.md
-2026-01-31T11:40:51.7372186Z 
-2026-01-31T11:40:51.7372259Z 0 links checked.
-2026-01-31T11:40:51.7372365Z 
-2026-01-31T11:40:51.7372569Z FILE: ./docs/planning/repository-topology-migration/PHASE_5_EXECUTION_PROMPT.md
-2026-01-31T11:40:51.7372870Z 
-2026-01-31T11:40:51.7372938Z 0 links checked.
-2026-01-31T11:40:51.7373035Z 
-2026-01-31T11:40:51.7373267Z FILE: ./docs/planning/repository-topology-migration/GOVERNANCE_PRESERVATION_ANALYSIS.md
-2026-01-31T11:40:51.7373608Z 
-2026-01-31T11:40:51.7373671Z 0 links checked.
-2026-01-31T11:40:51.7373768Z 
-2026-01-31T11:40:51.7373967Z FILE: ./docs/planning/repository-topology-migration/PHASE_6_EXECUTION_PROMPT.md
-2026-01-31T11:40:51.7374271Z 
-2026-01-31T11:40:51.7374334Z 1 links checked.
-2026-01-31T11:40:51.7374432Z 
-2026-01-31T11:40:51.7374650Z FILE: ./docs/planning/repository-topology-migration/REPO_TOPOLOGY_ARCHITECTURE.md
-2026-01-31T11:40:51.7374958Z 
-2026-01-31T11:40:51.7375147Z 0 links checked.
-2026-01-31T11:40:51.7375256Z 
-2026-01-31T11:40:51.7375468Z FILE: ./docs/planning/repository-topology-migration/PHASE_6_MIGRATION_STRATEGY.md
-2026-01-31T11:40:51.7375780Z 
-2026-01-31T11:40:51.7375842Z 0 links checked.
-2026-01-31T11:40:51.7375945Z 
-2026-01-31T11:40:51.7376145Z FILE: ./docs/planning/repository-topology-migration/PHASE_4_EXECUTION_PROMPT.md
-2026-01-31T11:40:51.7376488Z 
-2026-01-31T11:40:51.7376555Z 1 links checked.
-2026-01-31T11:40:51.7376652Z 
-2026-01-31T11:40:51.7376839Z FILE: ./docs/planning/repository-topology-migration/MIGRATION_STRATEGY.md
-2026-01-31T11:40:51.7377125Z 
-2026-01-31T11:40:51.7377190Z 0 links checked.
-2026-01-31T11:40:51.7377287Z 
-2026-01-31T11:40:51.7377493Z FILE: ./docs/planning/repository-topology-migration/PHASE_4_MIGRATION_STRATEGY.md
-2026-01-31T11:40:51.7377807Z 
-2026-01-31T11:40:51.7377870Z 0 links checked.
-2026-01-31T11:40:51.7377974Z 
-2026-01-31T11:40:51.7378161Z FILE: ./docs/planning/repository-topology-migration/MIGRATION_STATUS.md
-2026-01-31T11:40:51.7378436Z 
-2026-01-31T11:40:51.7378500Z 6 links checked.
-2026-01-31T11:40:51.7378604Z 
-2026-01-31T11:40:51.7378800Z FILE: ./docs/planning/repository-topology-migration/FOUNDER_DECISION_BRIEF.md
-2026-01-31T11:40:51.7379096Z 
-2026-01-31T11:40:51.7379160Z 0 links checked.
-2026-01-31T11:40:51.7379265Z 
-2026-01-31T11:40:51.7379385Z FILE: ./docs/planning/wave5/WAVE_5_PLANNING_PACKAGE.md
-2026-01-31T11:40:51.7379588Z 
-2026-01-31T11:40:51.7379658Z 0 links checked.
-2026-01-31T11:40:51.7379755Z 
-2026-01-31T11:40:51.7379881Z FILE: ./docs/planning/wave5/WAVE_5_PLATFORM_ASSIGNMENT.md
-2026-01-31T11:40:51.7380109Z 
-2026-01-31T11:40:51.7380207Z 0 links checked.
-2026-01-31T11:40:51.7380309Z 
-2026-01-31T11:40:51.7380414Z FILE: ./docs/planning/wave5/WAVE_5_MCB_UPDATES.md
-2026-01-31T11:40:51.7380690Z 
-2026-01-31T11:40:51.7380755Z 0 links checked.
-2026-01-31T11:40:51.7380855Z 
-2026-01-31T11:40:51.7380946Z FILE: ./docs/planning/wave5/README.md
-2026-01-31T11:40:51.7381358Z (node:1097) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
-2026-01-31T11:40:51.7382055Z (Use `node --trace-deprecation ...` to show where the warning was created)
-2026-01-31T11:40:51.7382462Z 
-2026-01-31T11:40:51.7382528Z 4 links checked.
-2026-01-31T11:40:51.7382634Z 
-2026-01-31T11:40:51.7382750Z FILE: ./docs/planning/wave5/WAVE_5_CANDIDATE_PHASES.md
-2026-01-31T11:40:51.7382957Z 
-2026-01-31T11:40:51.7383019Z 0 links checked.
-2026-01-31T11:40:51.7383125Z 
-2026-01-31T11:40:51.7383279Z FILE: ./docs/planning/wave3-final/FOUNDER_DECISION_BRIEF_WAVE3.md
-2026-01-31T11:40:51.7383525Z 
-2026-01-31T11:40:51.7383597Z 0 links checked.
-2026-01-31T11:40:51.7383695Z 
-2026-01-31T11:40:51.7383842Z FILE: ./docs/planning/wave3-final/CB4_CONTROL_BOARD_AMENDMENT.md
-2026-01-31T11:40:51.7384085Z 
-2026-01-31T11:40:51.7384148Z 0 links checked.
-2026-01-31T11:40:51.7384246Z 
-2026-01-31T11:40:51.7384407Z FILE: ./docs/planning/wave3-final/WAVE_3_CANDIDATE_PHASES_UPDATED.md
-2026-01-31T11:40:51.7384670Z 
-2026-01-31T11:40:51.7384733Z 0 links checked.
-2026-01-31T11:40:51.7384844Z 
-2026-01-31T11:40:51.7384992Z FILE: ./docs/planning/wave3-final/PF3_VERIFICATION_REPORT.md
-2026-01-31T11:40:51.7385216Z 
-2026-01-31T11:40:51.7385284Z 0 links checked.
-2026-01-31T11:40:51.7385388Z 
-2026-01-31T11:40:51.7385525Z FILE: ./docs/planning/wave3-final/CB1_VERIFICATION_REPORT.md
-2026-01-31T11:40:51.7385745Z 
-2026-01-31T11:40:51.7385808Z 0 links checked.
-2026-01-31T11:40:51.7385916Z 
-2026-01-31T11:40:51.7386047Z FILE: ./docs/planning/wave3-final/CB4_VERIFICATION_REPORT.md
-2026-01-31T11:40:51.7386265Z 
-2026-01-31T11:40:51.7386334Z 0 links checked.
-2026-01-31T11:40:51.7386432Z 
-2026-01-31T11:40:51.7386620Z FILE: ./docs/planning/wave3-final/WAVE_3_EXECUTION_READINESS_GAPS_UPDATED.md
-2026-01-31T11:40:51.7386899Z 
-2026-01-31T11:40:51.7386971Z 0 links checked.
-2026-01-31T11:40:51.7387069Z 
-2026-01-31T11:40:51.7387212Z FILE: ./docs/planning/wave3-final/WAVE_3_VERIFICATION_REPORT.md
-2026-01-31T11:40:51.7387453Z 
-2026-01-31T11:40:51.7387517Z 0 links checked.
-2026-01-31T11:40:51.7387616Z 
-2026-01-31T11:40:51.7387960Z FILE: ./docs/planning/wave3-final/WAVE_3_PARALLELIZATION_PLATFORM_ASSIGNMENT_UPDATED.md
-2026-01-31T11:40:51.7388292Z 
-2026-01-31T11:40:51.7388360Z 0 links checked.
-2026-01-31T11:40:51.7388456Z 
-2026-01-31T11:40:51.7388592Z FILE: ./docs/planning/wave3-final/ID3_VERIFICATION_REPORT.md
-2026-01-31T11:40:51.7388811Z 
-2026-01-31T11:40:51.7388871Z 0 links checked.
-2026-01-31T11:40:51.7388977Z 
-2026-01-31T11:40:51.7389103Z FILE: ./docs/planning/wave3-final/ID1_VERIFICATION_REPORT.md
-2026-01-31T11:40:51.7389321Z 
-2026-01-31T11:40:51.7389389Z 0 links checked.
-2026-01-31T11:40:51.7389485Z 
-2026-01-31T11:40:51.7389705Z [0;33m=========================================================================[0m
-2026-01-31T11:40:51.8972554Z Post job cleanup.
-2026-01-31T11:40:51.9938958Z [command]/usr/bin/git version
-2026-01-31T11:40:51.9975221Z git version 2.52.0
-2026-01-31T11:40:52.0026645Z Temporarily overriding HOME='/home/runner/work/_temp/2d3e846b-e142-480e-a94a-e8f849c73b61' before making global git config changes
-2026-01-31T11:40:52.0027674Z Adding repository directory to the temporary git global config as a safe directory
-2026-01-31T11:40:52.0032788Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/webwaka-governance/webwaka-governance
-2026-01-31T11:40:52.0067863Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-01-31T11:40:52.0100834Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-01-31T11:40:52.0330845Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-01-31T11:40:52.0353269Z http.https://github.com/.extraheader
-2026-01-31T11:40:52.0364898Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-2026-01-31T11:40:52.0394394Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-01-31T11:40:52.0628178Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-01-31T11:40:52.0660316Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-2026-01-31T11:40:52.0996285Z Cleaning up orphan processes
+﻿2026-01-31T11:44:50.3428882Z Current runner version: '2.331.0'
+2026-01-31T11:44:50.3453287Z ##[group]Runner Image Provisioner
+2026-01-31T11:44:50.3454149Z Hosted Compute Agent
+2026-01-31T11:44:50.3454710Z Version: 20260123.484
+2026-01-31T11:44:50.3455290Z Commit: 6bd6555ca37d84114959e1c76d2c01448ff61c5d
+2026-01-31T11:44:50.3456123Z Build Date: 2026-01-23T19:41:17Z
+2026-01-31T11:44:50.3456837Z Worker ID: {551e4901-c801-44bf-8f47-5be1c4d352ea}
+2026-01-31T11:44:50.3457580Z Azure Region: northcentralus
+2026-01-31T11:44:50.3458162Z ##[endgroup]
+2026-01-31T11:44:50.3459958Z ##[group]Operating System
+2026-01-31T11:44:50.3460540Z Ubuntu
+2026-01-31T11:44:50.3461066Z 24.04.3
+2026-01-31T11:44:50.3461527Z LTS
+2026-01-31T11:44:50.3461968Z ##[endgroup]
+2026-01-31T11:44:50.3462489Z ##[group]Runner Image
+2026-01-31T11:44:50.3463004Z Image: ubuntu-24.04
+2026-01-31T11:44:50.3463500Z Version: 20260126.10.1
+2026-01-31T11:44:50.3464714Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260126.10/images/ubuntu/Ubuntu2404-Readme.md
+2026-01-31T11:44:50.3466350Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260126.10
+2026-01-31T11:44:50.3467326Z ##[endgroup]
+2026-01-31T11:44:50.3468383Z ##[group]GITHUB_TOKEN Permissions
+2026-01-31T11:44:50.3470686Z Contents: read
+2026-01-31T11:44:50.3471491Z Metadata: read
+2026-01-31T11:44:50.3471994Z Packages: read
+2026-01-31T11:44:50.3472427Z ##[endgroup]
+2026-01-31T11:44:50.3474510Z Secret source: Actions
+2026-01-31T11:44:50.3475188Z Prepare workflow directory
+2026-01-31T11:44:50.3800392Z Prepare all required actions
+2026-01-31T11:44:50.3837258Z Getting action download info
+2026-01-31T11:44:50.7302657Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-01-31T11:44:50.8374107Z Download action repository 'gaurav-nelson/github-action-markdown-link-check@v1' (SHA:5c5dfc0ac2e225883c0e5f03a85311ec2830d368)
+2026-01-31T11:44:51.2965709Z Complete job name: validate-markdown
+2026-01-31T11:44:51.3423087Z ##[group]Build container for action use: '/home/runner/work/_actions/gaurav-nelson/github-action-markdown-link-check/v1/Dockerfile'.
+2026-01-31T11:44:51.3474163Z ##[command]/usr/bin/docker build -t 739abb:6538975e33ad4c3c9368c9fca755f2d7 -f "/home/runner/work/_actions/gaurav-nelson/github-action-markdown-link-check/v1/Dockerfile" "/home/runner/work/_actions/gaurav-nelson/github-action-markdown-link-check/v1"
+2026-01-31T11:44:54.1215777Z #0 building with "default" instance using docker driver
+2026-01-31T11:44:54.1216251Z 
+2026-01-31T11:44:54.1216424Z #1 [internal] load build definition from Dockerfile
+2026-01-31T11:44:54.1216836Z #1 transferring dockerfile: 204B done
+2026-01-31T11:44:54.1217182Z #1 DONE 0.0s
+2026-01-31T11:44:54.1217354Z 
+2026-01-31T11:44:54.1217520Z #2 [auth] library/node:pull token for registry-1.docker.io
+2026-01-31T11:44:54.1217860Z #2 DONE 0.0s
+2026-01-31T11:44:54.1217990Z 
+2026-01-31T11:44:54.1218264Z #3 [internal] load metadata for docker.io/library/node:lts-alpine
+2026-01-31T11:44:54.3877195Z #3 DONE 0.5s
+2026-01-31T11:44:54.5078276Z 
+2026-01-31T11:44:54.5080007Z #4 [internal] load .dockerignore
+2026-01-31T11:44:54.5080717Z #4 transferring context: 2B done
+2026-01-31T11:44:54.5081363Z #4 DONE 0.0s
+2026-01-31T11:44:54.5081589Z 
+2026-01-31T11:44:54.5081757Z #5 [internal] load build context
+2026-01-31T11:44:54.5082261Z #5 transferring context: 4.91kB done
+2026-01-31T11:44:54.5082766Z #5 DONE 0.0s
+2026-01-31T11:44:54.5083021Z 
+2026-01-31T11:44:54.5083635Z #6 [1/4] FROM docker.io/library/node:lts-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e
+2026-01-31T11:44:54.5084854Z #6 resolve docker.io/library/node:lts-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e done
+2026-01-31T11:44:54.5086259Z #6 sha256:14b92b0c10a5cc759604614d048be3aad4c013e9b574a6bff7f6fa78ac4e5860 1.26MB / 1.26MB 0.1s done
+2026-01-31T11:44:54.5087263Z #6 sha256:8d660e9b10b3e184cb399d48eb01ecf741674c77553a9a4c3490696169041c5d 0B / 446B 0.1s
+2026-01-31T11:44:54.5088416Z #6 sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e 3.87kB / 3.87kB done
+2026-01-31T11:44:54.5090516Z #6 sha256:26eb49fbfdf03bf69f728b73178fa6f9e7c2cef88b06561b65497f5ae8e50a3d 1.72kB / 1.72kB done
+2026-01-31T11:44:54.5091656Z #6 sha256:830a00b153fccc810930d0fff2681b173fa3acc2ab8c45d8af972f50d4bcd09d 6.52kB / 6.52kB done
+2026-01-31T11:44:54.5092905Z #6 sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153 0B / 3.86MB 0.1s
+2026-01-31T11:44:54.5094049Z #6 sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 10.49MB / 50.98MB 0.1s
+2026-01-31T11:44:54.6459237Z #6 sha256:8d660e9b10b3e184cb399d48eb01ecf741674c77553a9a4c3490696169041c5d 446B / 446B 0.1s done
+2026-01-31T11:44:54.6460950Z #6 sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153 3.86MB / 3.86MB 0.1s done
+2026-01-31T11:44:54.6462812Z #6 sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 37.56MB / 50.98MB 0.2s
+2026-01-31T11:44:54.6464385Z #6 extracting sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153 0.1s
+2026-01-31T11:44:54.8057933Z #6 sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 50.98MB / 50.98MB 0.3s done
+2026-01-31T11:44:54.8060344Z #6 extracting sha256:589002ba0eaed121a1dbf42f6648f29e5be55d5c8a6ee0f8eaa0285cc21ac153 0.1s done
+2026-01-31T11:44:54.8064608Z #6 extracting sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 0.1s
+2026-01-31T11:44:55.9636985Z #6 extracting sha256:4ef00bbbc75186b55c2be094a1c5ac03cbfac8897f1f2ed86107bf908a95fda9 1.3s done
+2026-01-31T11:44:56.9420874Z #6 extracting sha256:14b92b0c10a5cc759604614d048be3aad4c013e9b574a6bff7f6fa78ac4e5860
+2026-01-31T11:44:57.1601169Z #6 extracting sha256:14b92b0c10a5cc759604614d048be3aad4c013e9b574a6bff7f6fa78ac4e5860 0.0s done
+2026-01-31T11:44:57.1602391Z #6 extracting sha256:8d660e9b10b3e184cb399d48eb01ecf741674c77553a9a4c3490696169041c5d done
+2026-01-31T11:44:57.1603187Z #6 DONE 2.6s
+2026-01-31T11:44:57.1603785Z 
+2026-01-31T11:44:57.1604085Z #7 [2/4] RUN apk add --no-cache bash>5.0.16-r0 git>2.26.0-r0
+2026-01-31T11:44:57.6438360Z #7 DONE 0.6s
+2026-01-31T11:44:57.7855314Z 
+2026-01-31T11:44:57.7855766Z #8 [3/4] COPY entrypoint.sh /entrypoint.sh
+2026-01-31T11:44:57.7856334Z #8 DONE 0.0s
+2026-01-31T11:44:57.7856519Z 
+2026-01-31T11:44:57.7856672Z #9 [4/4] RUN chmod +x /entrypoint.sh
+2026-01-31T11:44:57.7857049Z #9 DONE 0.1s
+2026-01-31T11:44:57.9373700Z 
+2026-01-31T11:44:57.9374113Z #10 exporting to image
+2026-01-31T11:44:57.9374503Z #10 exporting layers
+2026-01-31T11:44:58.0589675Z #10 exporting layers 0.3s done
+2026-01-31T11:44:58.0794239Z #10 writing image sha256:013592cbbe4bbc4fb2ee7cc86178c280103095b2801b16d7141194cc8642955c done
+2026-01-31T11:44:58.0795507Z #10 naming to docker.io/library/739abb:6538975e33ad4c3c9368c9fca755f2d7 done
+2026-01-31T11:44:58.0796112Z #10 DONE 0.3s
+2026-01-31T11:44:58.0979941Z ##[endgroup]
+2026-01-31T11:44:58.1251639Z ##[group]Run actions/checkout@v4
+2026-01-31T11:44:58.1252194Z with:
+2026-01-31T11:44:58.1252418Z   repository: webwakaagent1/webwaka-governance
+2026-01-31T11:44:58.1252878Z   token: ***
+2026-01-31T11:44:58.1253058Z   ssh-strict: true
+2026-01-31T11:44:58.1253246Z   ssh-user: git
+2026-01-31T11:44:58.1253432Z   persist-credentials: true
+2026-01-31T11:44:58.1253647Z   clean: true
+2026-01-31T11:44:58.1253838Z   sparse-checkout-cone-mode: true
+2026-01-31T11:44:58.1254081Z   fetch-depth: 1
+2026-01-31T11:44:58.1254253Z   fetch-tags: false
+2026-01-31T11:44:58.1254427Z   show-progress: true
+2026-01-31T11:44:58.1254604Z   lfs: false
+2026-01-31T11:44:58.1254759Z   submodules: false
+2026-01-31T11:44:58.1254938Z   set-safe-directory: true
+2026-01-31T11:44:58.1255327Z ##[endgroup]
+2026-01-31T11:44:58.2311612Z Syncing repository: webwakaagent1/webwaka-governance
+2026-01-31T11:44:58.2312930Z ##[group]Getting Git version info
+2026-01-31T11:44:58.2313426Z Working directory is '/home/runner/work/webwaka-governance/webwaka-governance'
+2026-01-31T11:44:58.2314022Z [command]/usr/bin/git version
+2026-01-31T11:44:58.2337068Z git version 2.52.0
+2026-01-31T11:44:58.2362647Z ##[endgroup]
+2026-01-31T11:44:58.2376315Z Temporarily overriding HOME='/home/runner/work/_temp/84d98047-6464-4e74-a167-3f6c5da23b69' before making global git config changes
+2026-01-31T11:44:58.2377268Z Adding repository directory to the temporary git global config as a safe directory
+2026-01-31T11:44:58.2381826Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/webwaka-governance/webwaka-governance
+2026-01-31T11:44:58.2419206Z Deleting the contents of '/home/runner/work/webwaka-governance/webwaka-governance'
+2026-01-31T11:44:58.2422778Z ##[group]Initializing the repository
+2026-01-31T11:44:58.2426817Z [command]/usr/bin/git init /home/runner/work/webwaka-governance/webwaka-governance
+2026-01-31T11:44:58.2515883Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-01-31T11:44:58.2516435Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-01-31T11:44:58.2517075Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-01-31T11:44:58.2517774Z hint: call:
+2026-01-31T11:44:58.2518167Z hint:
+2026-01-31T11:44:58.2518671Z hint: 	git config --global init.defaultBranch <name>
+2026-01-31T11:44:58.2519176Z hint:
+2026-01-31T11:44:58.2519868Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-01-31T11:44:58.2520846Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-01-31T11:44:58.2521480Z hint:
+2026-01-31T11:44:58.2521781Z hint: 	git branch -m <name>
+2026-01-31T11:44:58.2522127Z hint:
+2026-01-31T11:44:58.2522547Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-01-31T11:44:58.2523170Z Initialized empty Git repository in /home/runner/work/webwaka-governance/webwaka-governance/.git/
+2026-01-31T11:44:58.2532181Z [command]/usr/bin/git remote add origin https://github.com/webwakaagent1/webwaka-governance
+2026-01-31T11:44:58.2563287Z ##[endgroup]
+2026-01-31T11:44:58.2563738Z ##[group]Disabling automatic garbage collection
+2026-01-31T11:44:58.2567615Z [command]/usr/bin/git config --local gc.auto 0
+2026-01-31T11:44:58.2594763Z ##[endgroup]
+2026-01-31T11:44:58.2595115Z ##[group]Setting up auth
+2026-01-31T11:44:58.2602131Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-01-31T11:44:58.2632786Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-01-31T11:44:58.2957468Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-01-31T11:44:58.2986810Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-01-31T11:44:58.3202542Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-01-31T11:44:58.3239053Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-01-31T11:44:58.3459064Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-01-31T11:44:58.3491409Z ##[endgroup]
+2026-01-31T11:44:58.3491821Z ##[group]Fetching the repository
+2026-01-31T11:44:58.3500693Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +67b0605852805d75d8ec7ead462fb3ab75370b9f:refs/remotes/pull/1/merge
+2026-01-31T11:44:58.6725459Z From https://github.com/webwakaagent1/webwaka-governance
+2026-01-31T11:44:58.6726304Z  * [new ref]         67b0605852805d75d8ec7ead462fb3ab75370b9f -> pull/1/merge
+2026-01-31T11:44:58.6758272Z ##[endgroup]
+2026-01-31T11:44:58.6758686Z ##[group]Determining the checkout info
+2026-01-31T11:44:58.6761117Z ##[endgroup]
+2026-01-31T11:44:58.6766193Z [command]/usr/bin/git sparse-checkout disable
+2026-01-31T11:44:58.6805885Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-01-31T11:44:58.6833392Z ##[group]Checking out the ref
+2026-01-31T11:44:58.6836997Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1/merge
+2026-01-31T11:44:58.6958897Z Note: switching to 'refs/remotes/pull/1/merge'.
+2026-01-31T11:44:58.6959518Z 
+2026-01-31T11:44:58.6959921Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-01-31T11:44:58.6960511Z changes and commit them, and you can discard any commits you make in this
+2026-01-31T11:44:58.6961270Z state without impacting any branches by switching back to a branch.
+2026-01-31T11:44:58.6961746Z 
+2026-01-31T11:44:58.6962085Z If you want to create a new branch to retain commits you create, you may
+2026-01-31T11:44:58.6962865Z do so (now or later) by using -c with the switch command. Example:
+2026-01-31T11:44:58.6963288Z 
+2026-01-31T11:44:58.6963457Z   git switch -c <new-branch-name>
+2026-01-31T11:44:58.6963732Z 
+2026-01-31T11:44:58.6963897Z Or undo this operation with:
+2026-01-31T11:44:58.6964133Z 
+2026-01-31T11:44:58.6964297Z   git switch -
+2026-01-31T11:44:58.6964513Z 
+2026-01-31T11:44:58.6964931Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-01-31T11:44:58.6965528Z 
+2026-01-31T11:44:58.6966261Z HEAD is now at 67b0605 Merge a315cc63f1f622438e70183ba9fc24f517723b7c into e50aa13ade93b4e914fb6cb0658b7f54a485106d
+2026-01-31T11:44:58.6969758Z ##[endgroup]
+2026-01-31T11:44:58.7003144Z [command]/usr/bin/git log -1 --format=%H
+2026-01-31T11:44:58.7024770Z 67b0605852805d75d8ec7ead462fb3ab75370b9f
+2026-01-31T11:44:58.7228039Z ##[group]Run gaurav-nelson/github-action-markdown-link-check@v1
+2026-01-31T11:44:58.7228392Z with:
+2026-01-31T11:44:58.7228566Z   use-quiet-mode: yes
+2026-01-31T11:44:58.7228821Z   config-file: .github/markdown-link-check-config.json
+2026-01-31T11:44:58.7229111Z   use-verbose-mode: no
+2026-01-31T11:44:58.7229596Z   folder-path: .
+2026-01-31T11:44:58.7229844Z   max-depth: -1
+2026-01-31T11:44:58.7230051Z   check-modified-files-only: no
+2026-01-31T11:44:58.7230271Z   base-branch: master
+2026-01-31T11:44:58.7230461Z   file-extension: .md
+2026-01-31T11:44:58.7230643Z ##[endgroup]
+2026-01-31T11:44:58.7338067Z ##[command]/usr/bin/docker run --name abb6538975e33ad4c3c9368c9fca755f2d7_58bf8c --label 739abb --workdir /github/workspace --rm -e "INPUT_USE-QUIET-MODE" -e "INPUT_CONFIG-FILE" -e "INPUT_USE-VERBOSE-MODE" -e "INPUT_FOLDER-PATH" -e "INPUT_MAX-DEPTH" -e "INPUT_CHECK-MODIFIED-FILES-ONLY" -e "INPUT_BASE-BRANCH" -e "INPUT_FILE-EXTENSION" -e "INPUT_FILE-PATH" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp":"/github/runner_temp" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/webwaka-governance/webwaka-governance":"/github/workspace" 739abb:6538975e33ad4c3c9368c9fca755f2d7  "yes" "no" ".github/markdown-link-check-config.json" "." "-1" "no" "master" ".md" ""
+2026-01-31T11:45:00.7322048Z npm warn deprecated har-validator@5.1.5: this library is no longer supported
+2026-01-31T11:45:00.7918757Z npm warn deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2026-01-31T11:45:00.8131276Z npm warn deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-01-31T11:45:01.0298041Z 
+2026-01-31T11:45:01.0300142Z added 65 packages in 2s
+2026-01-31T11:45:01.0300640Z 
+2026-01-31T11:45:01.0300797Z 5 packages are looking for funding
+2026-01-31T11:45:01.0301772Z   run `npm fund` for details
+2026-01-31T11:45:01.1015458Z [0;34mUsing markdown-link-check configuration file: [0;33m.github/markdown-link-check-config.json[0m
+2026-01-31T11:45:01.1016060Z [0;34mUSE_QUIET_MODE: yes[0m
+2026-01-31T11:45:01.1016309Z [0;34mUSE_VERBOSE_MODE: no[0m
+2026-01-31T11:45:01.1016555Z [0;34mFOLDER_PATH: .[0m
+2026-01-31T11:45:01.1016799Z [0;34mMAX_DEPTH: -1[0m
+2026-01-31T11:45:01.1017056Z [0;34mCHECK_MODIFIED_FILES: no[0m
+2026-01-31T11:45:01.1017321Z [0;34mFILE_EXTENSION: .md[0m
+2026-01-31T11:45:01.1017546Z [0;34mFILE_PATH: [0m
+2026-01-31T11:45:01.1024860Z + find . -name '*.md' -not -path './node_modules/*' -exec markdown-link-check '{}' --config .github/markdown-link-check-config.json -q ';'
+2026-01-31T11:45:27.8142583Z + set +x
+2026-01-31T11:45:27.8153728Z [0;33m=========================> MARKDOWN LINK CHECK <=========================[0m
+2026-01-31T11:45:27.8161450Z 
+2026-01-31T11:45:27.8172559Z FILE: ./README.md
+2026-01-31T11:45:27.8173657Z 
+2026-01-31T11:45:27.8174154Z 0 links checked.
+2026-01-31T11:45:27.8175808Z 
+2026-01-31T11:45:27.8176054Z FILE: ./docs/runbooks/CB4_INVENTORY_OPERATIONS.md
+2026-01-31T11:45:27.8176547Z 
+2026-01-31T11:45:27.8176697Z 0 links checked.
+2026-01-31T11:45:27.8176897Z 
+2026-01-31T11:45:27.8177203Z FILE: ./docs/runbooks/CS4_BILLING_CYCLES.md
+2026-01-31T11:45:27.8177535Z 
+2026-01-31T11:45:27.8177656Z 0 links checked.
+2026-01-31T11:45:27.8177855Z 
+2026-01-31T11:45:27.8178022Z FILE: ./docs/runbooks/CS4_PRICING_MODELS.md
+2026-01-31T11:45:27.8178356Z 
+2026-01-31T11:45:27.8178491Z 0 links checked.
+2026-01-31T11:45:27.8178683Z 
+2026-01-31T11:45:27.8178866Z FILE: ./docs/runbooks/CS4_TROUBLESHOOTING.md
+2026-01-31T11:45:27.8179230Z 
+2026-01-31T11:45:27.8179496Z 0 links checked.
+2026-01-31T11:45:27.8179688Z 
+2026-01-31T11:45:27.8179858Z FILE: ./docs/api/CS4_PRICING_BILLING_API.md
+2026-01-31T11:45:27.8180183Z 
+2026-01-31T11:45:27.8180303Z 0 links checked.
+2026-01-31T11:45:27.8180492Z 
+2026-01-31T11:45:27.8180645Z FILE: ./docs/api/CB4_INVENTORY_API.md
+2026-01-31T11:45:27.8180950Z 
+2026-01-31T11:45:27.8181066Z 0 links checked.
+2026-01-31T11:45:27.8181256Z 
+2026-01-31T11:45:27.8181502Z FILE: ./docs/v3/PLATFORM_IMPLEMENTATION_FRAMEWORK_V3.md
+2026-01-31T11:45:27.8181919Z 
+2026-01-31T11:45:27.8182051Z 0 links checked.
+2026-01-31T11:45:27.8182251Z 
+2026-01-31T11:45:27.8182487Z FILE: ./docs/architecture/ARCH_CB2_REPORTING_ANALYTICS.md
+2026-01-31T11:45:27.8183335Z (node:107) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8184323Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8184860Z 
+2026-01-31T11:45:27.8184992Z 1 links checked.
+2026-01-31T11:45:27.8185408Z 
+2026-01-31T11:45:27.8185708Z FILE: ./docs/architecture/ARCH_00_CAPABILITY_DEPENDENCY_MAPS.md
+2026-01-31T11:45:27.8186157Z 
+2026-01-31T11:45:27.8186281Z 0 links checked.
+2026-01-31T11:45:27.8186461Z 
+2026-01-31T11:45:27.8186703Z FILE: ./docs/architecture/ARCH_PF2_REALTIME_EVENTING.md
+2026-01-31T11:45:27.8187090Z 
+2026-01-31T11:45:27.8187203Z 0 links checked.
+2026-01-31T11:45:27.8187399Z 
+2026-01-31T11:45:27.8187564Z FILE: ./docs/architecture/ARCH_CB1_MLAS.md
+2026-01-31T11:45:27.8188580Z (node:140) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8189641Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8190436Z [✖] ../../phases/CB-1_MLAS_CAPABILITY.md
+2026-01-31T11:45:27.8190952Z [✖] ../../runbooks/RUNBOOK_CB1_MLAS.md
+2026-01-31T11:45:27.8191408Z [✖] ../../api/API_CB1_MLAS.md
+2026-01-31T11:45:27.8191655Z 
+2026-01-31T11:45:27.8191769Z 3 links checked.
+2026-01-31T11:45:27.8191943Z 
+2026-01-31T11:45:27.8192077Z ERROR: 3 dead links found!
+2026-01-31T11:45:27.8192593Z [✖] ../../phases/CB-1_MLAS_CAPABILITY.md → Status: 400
+2026-01-31T11:45:27.8193237Z [✖] ../../runbooks/RUNBOOK_CB1_MLAS.md → Status: 400
+2026-01-31T11:45:27.8193765Z [✖] ../../api/API_CB1_MLAS.md → Status: 400
+2026-01-31T11:45:27.8193948Z 
+2026-01-31T11:45:27.8194095Z FILE: ./docs/architecture/ARCH_PF1_FOUNDATIONAL_EXTENSIONS.md
+2026-01-31T11:45:27.8194576Z (node:151) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8195106Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8195377Z 
+2026-01-31T11:45:27.8195450Z 7 links checked.
+2026-01-31T11:45:27.8195554Z 
+2026-01-31T11:45:27.8195674Z FILE: ./docs/architecture/ARCH_CS4_PRICING_BILLING.md
+2026-01-31T11:45:27.8196118Z (node:162) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8196626Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8196898Z 
+2026-01-31T11:45:27.8197143Z 3 links checked.
+2026-01-31T11:45:27.8197255Z 
+2026-01-31T11:45:27.8197394Z FILE: ./docs/architecture/ARCH_CB4_INVENTORY_MANAGEMENT.md
+2026-01-31T11:45:27.8197836Z (node:173) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8198336Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8198603Z 
+2026-01-31T11:45:27.8198674Z 3 links checked.
+2026-01-31T11:45:27.8198782Z 
+2026-01-31T11:45:27.8198890Z FILE: ./docs/architecture/ARCH_PF4_TESTING_CICD.md
+2026-01-31T11:45:27.8199081Z 
+2026-01-31T11:45:27.8199145Z 0 links checked.
+2026-01-31T11:45:27.8199252Z 
+2026-01-31T11:45:27.8199672Z FILE: ./docs/architecture/ARCH_CS1_FINANCIAL_LEDGER.md
+2026-01-31T11:45:27.8200139Z (node:195) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8200643Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8200912Z 
+2026-01-31T11:45:27.8200983Z 12 links checked.
+2026-01-31T11:45:27.8201088Z 
+2026-01-31T11:45:27.8201215Z FILE: ./docs/architecture/ARCH_CB3_CONTENT_MANAGEMENT.md
+2026-01-31T11:45:27.8201651Z (node:206) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8202145Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8202459Z 
+2026-01-31T11:45:27.8202581Z 1 links checked.
+2026-01-31T11:45:27.8202773Z 
+2026-01-31T11:45:27.8202936Z FILE: ./docs/architecture/ARCH_PF3_AI_HIGH_COMPLEXITY.md
+2026-01-31T11:45:27.8203146Z 
+2026-01-31T11:45:27.8203218Z 0 links checked.
+2026-01-31T11:45:27.8203325Z 
+2026-01-31T11:45:27.8203528Z FILE: ./docs/architecture/ARCH_CS2_NOTIFICATION_SERVICE.md
+2026-01-31T11:45:27.8204256Z (node:228) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8205166Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8205907Z [✖] ../../phases/CS-2_NOTIFICATION_SERVICE.md
+2026-01-31T11:45:27.8206682Z [✖] ../../governance/WEBWAKA_MASTER_CONTROL_BOARD.md#cs-2-notification-service
+2026-01-31T11:45:27.8207183Z 
+2026-01-31T11:45:27.8207293Z 2 links checked.
+2026-01-31T11:45:27.8207467Z 
+2026-01-31T11:45:27.8207597Z ERROR: 2 dead links found!
+2026-01-31T11:45:27.8208118Z [✖] ../../phases/CS-2_NOTIFICATION_SERVICE.md → Status: 400
+2026-01-31T11:45:27.8209009Z [✖] ../../governance/WEBWAKA_MASTER_CONTROL_BOARD.md#cs-2-notification-service → Status: 400
+2026-01-31T11:45:27.8210023Z 
+2026-01-31T11:45:27.8210193Z FILE: ./docs/phases/CB-1_MLAS_CAPABILITY.md
+2026-01-31T11:45:27.8210544Z 
+2026-01-31T11:45:27.8210661Z 0 links checked.
+2026-01-31T11:45:27.8210843Z 
+2026-01-31T11:45:27.8211147Z FILE: ./docs/phases/CB-4_INVENTORY_MANAGEMENT_CAPABILITY.md
+2026-01-31T11:45:27.8211554Z 
+2026-01-31T11:45:27.8211669Z 0 links checked.
+2026-01-31T11:45:27.8211848Z 
+2026-01-31T11:45:27.8212045Z FILE: ./docs/phases/CS-4_PRICING_BILLING_SERVICE.md
+2026-01-31T11:45:27.8213473Z 
+2026-01-31T11:45:27.8213612Z 0 links checked.
+2026-01-31T11:45:27.8213806Z 
+2026-01-31T11:45:27.8214103Z FILE: ./docs/phases/ID-1_ENTERPRISE_DEPLOYMENT_AUTOMATION.md
+2026-01-31T11:45:27.8214477Z 
+2026-01-31T11:45:27.8214585Z 0 links checked.
+2026-01-31T11:45:27.8214755Z 
+2026-01-31T11:45:27.8215000Z FILE: ./docs/phases/SC-3_TRANSPORTATION_LOGISTICS_SUITE_V1.md
+2026-01-31T11:45:27.8215392Z 
+2026-01-31T11:45:27.8215543Z 0 links checked.
+2026-01-31T11:45:27.8215742Z 
+2026-01-31T11:45:27.8215950Z FILE: ./docs/phases/CS-1_FINANCIAL_LEDGER_SERVICE.md
+2026-01-31T11:45:27.8216745Z (node:294) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8217636Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8218113Z 
+2026-01-31T11:45:27.8218234Z 1 links checked.
+2026-01-31T11:45:27.8218425Z 
+2026-01-31T11:45:27.8218672Z FILE: ./docs/phases/PF-3_AI_HIGH_COMPLEXITY_READINESS.md
+2026-01-31T11:45:27.8219047Z 
+2026-01-31T11:45:27.8220880Z 0 links checked.
+2026-01-31T11:45:27.8221151Z 
+2026-01-31T11:45:27.8221391Z FILE: ./docs/phases/CB-2_REPORTING_ANALYTICS_CAPABILITY.md
+2026-01-31T11:45:27.8222180Z (node:316) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8223125Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8223561Z 
+2026-01-31T11:45:27.8223648Z 1 links checked.
+2026-01-31T11:45:27.8223761Z 
+2026-01-31T11:45:27.8223881Z FILE: ./docs/phases/PF-1_FOUNDATIONAL_EXTENSIONS.md
+2026-01-31T11:45:27.8224469Z (node:327) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8225096Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8226028Z [✖] /docs/architecture/ARCH_PF1_FOUNDATIONAL_EXTENSIONS.md
+2026-01-31T11:45:27.8227651Z [✖] /implementations/pf1-foundational-extensions/IMPLEMENTATION_SUMMARY.md
+2026-01-31T11:45:27.8229577Z [✖] /implementations/pf1-foundational-extensions/docs/API_SUPER_ADMIN_CONTROL_PLANE.md
+2026-01-31T11:45:27.8230528Z [✖] /implementations/pf1-foundational-extensions/docs/RUNBOOK_INSTANCE_PROVISIONING.md
+2026-01-31T11:45:27.8231381Z [✖] /implementations/pf1-foundational-extensions/docs/RUNBOOK_UPGRADE_MANAGEMENT.md
+2026-01-31T11:45:27.8231952Z 
+2026-01-31T11:45:27.8232033Z 6 links checked.
+2026-01-31T11:45:27.8232150Z 
+2026-01-31T11:45:27.8232243Z ERROR: 5 dead links found!
+2026-01-31T11:45:27.8232780Z [✖] /docs/architecture/ARCH_PF1_FOUNDATIONAL_EXTENSIONS.md → Status: 400
+2026-01-31T11:45:27.8233380Z [✖] /implementations/pf1-foundational-extensions/IMPLEMENTATION_SUMMARY.md → Status: 400
+2026-01-31T11:45:27.8234092Z [✖] /implementations/pf1-foundational-extensions/docs/API_SUPER_ADMIN_CONTROL_PLANE.md → Status: 400
+2026-01-31T11:45:27.8234823Z [✖] /implementations/pf1-foundational-extensions/docs/RUNBOOK_INSTANCE_PROVISIONING.md → Status: 400
+2026-01-31T11:45:27.8235531Z [✖] /implementations/pf1-foundational-extensions/docs/RUNBOOK_UPGRADE_MANAGEMENT.md → Status: 400
+2026-01-31T11:45:27.8235906Z 
+2026-01-31T11:45:27.8236035Z FILE: ./docs/phases/PF-5_API_DOCUMENTATION_OPENAPI.md
+2026-01-31T11:45:27.8236246Z 
+2026-01-31T11:45:27.8236323Z 0 links checked.
+2026-01-31T11:45:27.8236427Z 
+2026-01-31T11:45:27.8236511Z FILE: ./docs/phases/CS-3_IAM_V2.md
+2026-01-31T11:45:27.8236910Z (node:349) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8237645Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8237936Z 
+2026-01-31T11:45:27.8238004Z 1 links checked.
+2026-01-31T11:45:27.8238112Z 
+2026-01-31T11:45:27.8238210Z FILE: ./docs/phases/SC-2_MLAS_SUITE_V1.md
+2026-01-31T11:45:27.8238383Z 
+2026-01-31T11:45:27.8238450Z 0 links checked.
+2026-01-31T11:45:27.8238550Z 
+2026-01-31T11:45:27.8238668Z FILE: ./docs/phases/PF-4_AUTOMATED_TESTING_CICD.md
+2026-01-31T11:45:27.8239108Z (node:371) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8239858Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8240289Z [✖] ../planning/wave5/BRANCH_PROTECTION_CONFIG.md
+2026-01-31T11:45:27.8240488Z 
+2026-01-31T11:45:27.8240552Z 9 links checked.
+2026-01-31T11:45:27.8240651Z 
+2026-01-31T11:45:27.8240737Z ERROR: 1 dead links found!
+2026-01-31T11:45:27.8241062Z [✖] ../planning/wave5/BRANCH_PROTECTION_CONFIG.md → Status: 400
+2026-01-31T11:45:27.8241302Z 
+2026-01-31T11:45:27.8241409Z FILE: ./docs/phases/SC-1_COMMERCE_SUITE_V1.md
+2026-01-31T11:45:27.8241589Z 
+2026-01-31T11:45:27.8241654Z 0 links checked.
+2026-01-31T11:45:27.8241764Z 
+2026-01-31T11:45:27.8241897Z FILE: ./docs/phases/CB-3_CONTENT_MANAGEMENT_CAPABILITY.md
+2026-01-31T11:45:27.8242347Z (node:393) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8242856Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8243124Z 
+2026-01-31T11:45:27.8243365Z 1 links checked.
+2026-01-31T11:45:27.8243472Z 
+2026-01-31T11:45:27.8243597Z FILE: ./docs/phases/ID-3_GLOBAL_EXPANSION_MULTI_REGION.md
+2026-01-31T11:45:27.8243812Z 
+2026-01-31T11:45:27.8243875Z 0 links checked.
+2026-01-31T11:45:27.8243975Z 
+2026-01-31T11:45:27.8244113Z FILE: ./docs/phases/PF-2_REALTIME_EVENTING_INFRASTRUCTURE.md
+2026-01-31T11:45:27.8244346Z 
+2026-01-31T11:45:27.8244410Z 0 links checked.
+2026-01-31T11:45:27.8244516Z 
+2026-01-31T11:45:27.8244623Z FILE: ./docs/phases/CS-2_NOTIFICATION_SERVICE.md
+2026-01-31T11:45:27.8245036Z (node:426) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8245535Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8245801Z 
+2026-01-31T11:45:27.8245866Z 1 links checked.
+2026-01-31T11:45:27.8245977Z 
+2026-01-31T11:45:27.8246085Z FILE: ./docs/reports/DECISION_5_IMPACT_ANALYSIS.md
+2026-01-31T11:45:27.8246278Z 
+2026-01-31T11:45:27.8246349Z 0 links checked.
+2026-01-31T11:45:27.8246451Z 
+2026-01-31T11:45:27.8246554Z FILE: ./docs/reports/DECISION_8_IMPACT_ANALYSIS.md
+2026-01-31T11:45:27.8246742Z 
+2026-01-31T11:45:27.8246813Z 0 links checked.
+2026-01-31T11:45:27.8246910Z 
+2026-01-31T11:45:27.8247045Z FILE: ./docs/reports/DECISION_3_AMENDMENT_IMPACT_ANALYSIS.md
+2026-01-31T11:45:27.8247269Z 
+2026-01-31T11:45:27.8247332Z 0 links checked.
+2026-01-31T11:45:27.8247428Z 
+2026-01-31T11:45:27.8247542Z FILE: ./docs/reports/DECISION_6_IMPACT_ANALYSIS.md
+2026-01-31T11:45:27.8247727Z 
+2026-01-31T11:45:27.8247794Z 0 links checked.
+2026-01-31T11:45:27.8247891Z 
+2026-01-31T11:45:27.8248023Z FILE: ./docs/reports/ARTIFACT_RECONCILIATION_CHANGELOG.md
+2026-01-31T11:45:27.8248237Z 
+2026-01-31T11:45:27.8248314Z 0 links checked.
+2026-01-31T11:45:27.8248413Z 
+2026-01-31T11:45:27.8248523Z FILE: ./docs/reports/DECISION_7_IMPACT_ANALYSIS.md
+2026-01-31T11:45:27.8248708Z 
+2026-01-31T11:45:27.8248773Z 0 links checked.
+2026-01-31T11:45:27.8248877Z 
+2026-01-31T11:45:27.8248981Z FILE: ./docs/reports/DECISION_4_IMPACT_ANALYSIS.md
+2026-01-31T11:45:27.8249165Z 
+2026-01-31T11:45:27.8249228Z 0 links checked.
+2026-01-31T11:45:27.8249512Z 
+2026-01-31T11:45:27.8249613Z FILE: ./docs/guides/DEVELOPER_GUIDE_CICD.md
+2026-01-31T11:45:27.8249794Z 
+2026-01-31T11:45:27.8249866Z 0 links checked.
+2026-01-31T11:45:27.8249965Z 
+2026-01-31T11:45:27.8250068Z FILE: ./docs/guides/BRANCH_PROTECTION_CONFIG.md
+2026-01-31T11:45:27.8250256Z 
+2026-01-31T11:45:27.8250450Z 0 links checked.
+2026-01-31T11:45:27.8250547Z 
+2026-01-31T11:45:27.8250674Z FILE: ./docs/decisions/DECISION_AREA_2_EXECUTION_MODEL.md
+2026-01-31T11:45:27.8250891Z 
+2026-01-31T11:45:27.8250954Z 0 links checked.
+2026-01-31T11:45:27.8251051Z 
+2026-01-31T11:45:27.8251181Z FILE: ./docs/decisions/DECISION_AREA_1_REPO_STRUCTURE.md
+2026-01-31T11:45:27.8251388Z 
+2026-01-31T11:45:27.8251453Z 0 links checked.
+2026-01-31T11:45:27.8251550Z 
+2026-01-31T11:45:27.8251708Z FILE: ./docs/decisions/DECISION_AREA_3_DOC_PROMPT_ARCHITECTURE.md
+2026-01-31T11:45:27.8252189Z (node:558) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8252702Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8253454Z [✖] link/to/mcb#sc-1
+2026-01-31T11:45:27.8253682Z 
+2026-01-31T11:45:27.8253821Z 1 links checked.
+2026-01-31T11:45:27.8253990Z 
+2026-01-31T11:45:27.8254074Z ERROR: 1 dead links found!
+2026-01-31T11:45:27.8254331Z [✖] link/to/mcb#sc-1 → Status: 400
+2026-01-31T11:45:27.8254493Z 
+2026-01-31T11:45:27.8254751Z FILE: ./docs/decisions/PLATFORM_EXECUTION_OPERATING_MODEL.md
+2026-01-31T11:45:27.8255000Z 
+2026-01-31T11:45:27.8255068Z 0 links checked.
+2026-01-31T11:45:27.8255174Z 
+2026-01-31T11:45:27.8255292Z FILE: ./docs/governance/PROMPT_INVARIANT_CHECKLIST.md
+2026-01-31T11:45:27.8255613Z 
+2026-01-31T11:45:27.8255683Z 0 links checked.
+2026-01-31T11:45:27.8255789Z 
+2026-01-31T11:45:27.8255908Z FILE: ./docs/governance/WEBWAKA_MASTER_CONTROL_BOARD.md
+2026-01-31T11:45:27.8256668Z (node:591) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8257191Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8257630Z [✖] /docs/architecture/ARCH_CS4_PRICING_BILLING.md
+2026-01-31T11:45:27.8257975Z [✖] /docs/architecture/ARCH_CB2_REPORTING_ANALYTICS.md
+2026-01-31T11:45:27.8258336Z [✖] /docs/architecture/ARCH_CB4_INVENTORY_MANAGEMENT.md
+2026-01-31T11:45:27.8258657Z [✖] /docs/api/CB4_INVENTORY_API.md
+2026-01-31T11:45:27.8258821Z 
+2026-01-31T11:45:27.8258887Z 22 links checked.
+2026-01-31T11:45:27.8258992Z 
+2026-01-31T11:45:27.8259075Z ERROR: 4 dead links found!
+2026-01-31T11:45:27.8259793Z [✖] /docs/architecture/ARCH_CS4_PRICING_BILLING.md → Status: 400
+2026-01-31T11:45:27.8260477Z [✖] /docs/architecture/ARCH_CB2_REPORTING_ANALYTICS.md → Status: 400
+2026-01-31T11:45:27.8261122Z [✖] /docs/architecture/ARCH_CB4_INVENTORY_MANAGEMENT.md → Status: 400
+2026-01-31T11:45:27.8261683Z [✖] /docs/api/CB4_INVENTORY_API.md → Status: 400
+2026-01-31T11:45:27.8261872Z 
+2026-01-31T11:45:27.8262015Z FILE: ./docs/governance/PROMPTS_AS_ARTIFACTS_MODEL.md
+2026-01-31T11:45:27.8262364Z 
+2026-01-31T11:45:27.8262431Z 0 links checked.
+2026-01-31T11:45:27.8262533Z 
+2026-01-31T11:45:27.8262666Z FILE: ./docs/governance/POST_MIGRATION_OPERATING_RULES.md
+2026-01-31T11:45:27.8262881Z 
+2026-01-31T11:45:27.8263033Z 0 links checked.
+2026-01-31T11:45:27.8263184Z 
+2026-01-31T11:45:27.8263344Z FILE: ./docs/planning/wave4/CROSS_PHASE_GOVERNANCE_VERIFICATION.md
+2026-01-31T11:45:27.8263598Z 
+2026-01-31T11:45:27.8263665Z 0 links checked.
+2026-01-31T11:45:27.8263848Z 
+2026-01-31T11:45:27.8264029Z FILE: ./docs/planning/wave4/PROMPT_SC-1_COMMERCE_SUITE.md
+2026-01-31T11:45:27.8264243Z 
+2026-01-31T11:45:27.8264313Z 0 links checked.
+2026-01-31T11:45:27.8264414Z 
+2026-01-31T11:45:27.8264527Z FILE: ./docs/planning/wave4/WAVE_4_PLANNING_REPORT.md
+2026-01-31T11:45:27.8264872Z 
+2026-01-31T11:45:27.8264941Z 0 links checked.
+2026-01-31T11:45:27.8265040Z 
+2026-01-31T11:45:27.8265189Z FILE: ./docs/planning/wave4/PROMPT_SC-3_TRANSPORT_LOGISTICS.md
+2026-01-31T11:45:27.8265506Z 
+2026-01-31T11:45:27.8265614Z 1 links checked.
+2026-01-31T11:45:27.8265719Z 
+2026-01-31T11:45:27.8265864Z FILE: ./docs/planning/wave4/WAVE_4_EXECUTION_READINESS_GAPS.md
+2026-01-31T11:45:27.8266165Z 
+2026-01-31T11:45:27.8266310Z 0 links checked.
+2026-01-31T11:45:27.8266477Z 
+2026-01-31T11:45:27.8266567Z FILE: ./docs/planning/wave4/README.md
+2026-01-31T11:45:27.8266902Z 
+2026-01-31T11:45:27.8266969Z 0 links checked.
+2026-01-31T11:45:27.8267134Z 
+2026-01-31T11:45:27.8267350Z FILE: ./docs/planning/wave4/WAVE_4_PLATFORM_ASSIGNMENT.md
+2026-01-31T11:45:27.8267567Z 
+2026-01-31T11:45:27.8267634Z 0 links checked.
+2026-01-31T11:45:27.8267733Z 
+2026-01-31T11:45:27.8267862Z FILE: ./docs/planning/wave4/WAVE_4_VERIFICATION_REPORT.md
+2026-01-31T11:45:27.8268214Z 
+2026-01-31T11:45:27.8268281Z 0 links checked.
+2026-01-31T11:45:27.8268386Z 
+2026-01-31T11:45:27.8268524Z FILE: ./docs/planning/wave4/PROMPT_ID-2_PARTNER_WHITELABEL.md
+2026-01-31T11:45:27.8268807Z 
+2026-01-31T11:45:27.8268928Z 0 links checked.
+2026-01-31T11:45:27.8269040Z 
+2026-01-31T11:45:27.8269145Z FILE: ./docs/planning/wave4/WAVE_4_MCB_UPDATES.md
+2026-01-31T11:45:27.8269530Z 
+2026-01-31T11:45:27.8269647Z 0 links checked.
+2026-01-31T11:45:27.8269757Z 
+2026-01-31T11:45:27.8269869Z FILE: ./docs/planning/wave4/PROMPT_CS-3_IAM_V2.md
+2026-01-31T11:45:27.8270072Z 
+2026-01-31T11:45:27.8270137Z 1 links checked.
+2026-01-31T11:45:27.8270311Z 
+2026-01-31T11:45:27.8270497Z FILE: ./docs/planning/wave4/PROMPT_SC-2_MLAS_SUITE.md
+2026-01-31T11:45:27.8270710Z 
+2026-01-31T11:45:27.8270775Z 0 links checked.
+2026-01-31T11:45:27.8270877Z 
+2026-01-31T11:45:27.8271000Z FILE: ./docs/planning/wave4/WAVE_4_CANDIDATE_PHASES.md
+2026-01-31T11:45:27.8271352Z 
+2026-01-31T11:45:27.8271420Z 0 links checked.
+2026-01-31T11:45:27.8271522Z 
+2026-01-31T11:45:27.8271676Z FILE: ./docs/planning/02_WEBWAKA_MASTER_IMPLEMENTATION_PLAN.md
+2026-01-31T11:45:27.8271977Z 
+2026-01-31T11:45:27.8272094Z 0 links checked.
+2026-01-31T11:45:27.8272205Z 
+2026-01-31T11:45:27.8272458Z FILE: ./docs/planning/wave3/WAVE_3_PLANNING_REPORT.md
+2026-01-31T11:45:27.8272666Z 
+2026-01-31T11:45:27.8272811Z 0 links checked.
+2026-01-31T11:45:27.8272984Z 
+2026-01-31T11:45:27.8273101Z FILE: ./docs/planning/wave3/WAVE_3_READINESS_GAPS.md
+2026-01-31T11:45:27.8273297Z 
+2026-01-31T11:45:27.8273368Z 0 links checked.
+2026-01-31T11:45:27.8273464Z 
+2026-01-31T11:45:27.8273635Z FILE: ./docs/planning/wave3/WAVE_3_MCB_UPDATES.md
+2026-01-31T11:45:27.8274100Z 
+2026-01-31T11:45:27.8274227Z 0 links checked.
+2026-01-31T11:45:27.8274333Z 
+2026-01-31T11:45:27.8274477Z FILE: ./docs/planning/wave3/WAVE_3_PARALLELIZATION_ANALYSIS.md
+2026-01-31T11:45:27.8274718Z 
+2026-01-31T11:45:27.8274782Z 0 links checked.
+2026-01-31T11:45:27.8274879Z 
+2026-01-31T11:45:27.8275014Z FILE: ./docs/planning/wave3/WAVE_3_PLATFORM_ASSIGNMENT.md
+2026-01-31T11:45:27.8275224Z 
+2026-01-31T11:45:27.8275287Z 0 links checked.
+2026-01-31T11:45:27.8275389Z 
+2026-01-31T11:45:27.8275507Z FILE: ./docs/planning/wave3/WAVE_3_CANDIDATE_PHASES.md
+2026-01-31T11:45:27.8275713Z 
+2026-01-31T11:45:27.8275778Z 0 links checked.
+2026-01-31T11:45:27.8275884Z 
+2026-01-31T11:45:27.8276103Z FILE: ./docs/planning/repository-topology-migration/PHASE_2_EXECUTION_PROMPT.md
+2026-01-31T11:45:27.8276420Z 
+2026-01-31T11:45:27.8276495Z 2 links checked.
+2026-01-31T11:45:27.8276601Z 
+2026-01-31T11:45:27.8276843Z FILE: ./docs/planning/repository-topology-migration/REPOSITORY_TOPOLOGY_MIGRATION_PLAN.md
+2026-01-31T11:45:27.8277193Z 
+2026-01-31T11:45:27.8277260Z 0 links checked.
+2026-01-31T11:45:27.8277360Z 
+2026-01-31T11:45:27.8277572Z FILE: ./docs/planning/repository-topology-migration/PHASE_5_MIGRATION_STRATEGY.md
+2026-01-31T11:45:27.8277888Z 
+2026-01-31T11:45:27.8277954Z 0 links checked.
+2026-01-31T11:45:27.8278052Z 
+2026-01-31T11:45:27.8278274Z FILE: ./docs/planning/repository-topology-migration/MIGRATION_COMPLETION_REPORT.md
+2026-01-31T11:45:27.8278585Z 
+2026-01-31T11:45:27.8278650Z 6 links checked.
+2026-01-31T11:45:27.8278752Z 
+2026-01-31T11:45:27.8278964Z FILE: ./docs/planning/repository-topology-migration/PHASE_2_MIGRATION_STRATEGY.md
+2026-01-31T11:45:27.8279265Z 
+2026-01-31T11:45:27.8279500Z 0 links checked.
+2026-01-31T11:45:27.8279671Z 
+2026-01-31T11:45:27.8279982Z FILE: ./docs/planning/repository-topology-migration/PHASE_1_EXECUTION_PROMPT.md
+2026-01-31T11:45:27.8280500Z 
+2026-01-31T11:45:27.8280580Z 1 links checked.
+2026-01-31T11:45:27.8280685Z 
+2026-01-31T11:45:27.8281058Z FILE: ./docs/planning/repository-topology-migration/PHASE_3_MIGRATION_STRATEGY.md
+2026-01-31T11:45:27.8281372Z 
+2026-01-31T11:45:27.8281442Z 0 links checked.
+2026-01-31T11:45:27.8281543Z 
+2026-01-31T11:45:27.8281747Z FILE: ./docs/planning/repository-topology-migration/PHASE_3_EXECUTION_PROMPT.md
+2026-01-31T11:45:27.8282050Z 
+2026-01-31T11:45:27.8282116Z 1 links checked.
+2026-01-31T11:45:27.8282214Z 
+2026-01-31T11:45:27.8282467Z FILE: ./docs/planning/repository-topology-migration/EXECUTION_MODEL_IMPACT_RISK_ANALYSIS.md
+2026-01-31T11:45:27.8282815Z 
+2026-01-31T11:45:27.8282883Z 0 links checked.
+2026-01-31T11:45:27.8282992Z 
+2026-01-31T11:45:27.8283141Z FILE: ./docs/planning/repository-topology-migration/README.md
+2026-01-31T11:45:27.8283380Z 
+2026-01-31T11:45:27.8283444Z 0 links checked.
+2026-01-31T11:45:27.8283550Z 
+2026-01-31T11:45:27.8283752Z FILE: ./docs/planning/repository-topology-migration/PHASE_5_EXECUTION_PROMPT.md
+2026-01-31T11:45:27.8284056Z 
+2026-01-31T11:45:27.8284128Z 0 links checked.
+2026-01-31T11:45:27.8284231Z 
+2026-01-31T11:45:27.8284466Z FILE: ./docs/planning/repository-topology-migration/GOVERNANCE_PRESERVATION_ANALYSIS.md
+2026-01-31T11:45:27.8284804Z 
+2026-01-31T11:45:27.8284868Z 0 links checked.
+2026-01-31T11:45:27.8284964Z 
+2026-01-31T11:45:27.8285162Z FILE: ./docs/planning/repository-topology-migration/PHASE_6_EXECUTION_PROMPT.md
+2026-01-31T11:45:27.8285465Z 
+2026-01-31T11:45:27.8285533Z 1 links checked.
+2026-01-31T11:45:27.8285631Z 
+2026-01-31T11:45:27.8285846Z FILE: ./docs/planning/repository-topology-migration/REPO_TOPOLOGY_ARCHITECTURE.md
+2026-01-31T11:45:27.8286152Z 
+2026-01-31T11:45:27.8286323Z 0 links checked.
+2026-01-31T11:45:27.8286430Z 
+2026-01-31T11:45:27.8286639Z FILE: ./docs/planning/repository-topology-migration/PHASE_6_MIGRATION_STRATEGY.md
+2026-01-31T11:45:27.8286941Z 
+2026-01-31T11:45:27.8287006Z 0 links checked.
+2026-01-31T11:45:27.8287110Z 
+2026-01-31T11:45:27.8287309Z FILE: ./docs/planning/repository-topology-migration/PHASE_4_EXECUTION_PROMPT.md
+2026-01-31T11:45:27.8287607Z 
+2026-01-31T11:45:27.8287676Z 1 links checked.
+2026-01-31T11:45:27.8287774Z 
+2026-01-31T11:45:27.8287956Z FILE: ./docs/planning/repository-topology-migration/MIGRATION_STRATEGY.md
+2026-01-31T11:45:27.8288241Z 
+2026-01-31T11:45:27.8288306Z 0 links checked.
+2026-01-31T11:45:27.8288403Z 
+2026-01-31T11:45:27.8288609Z FILE: ./docs/planning/repository-topology-migration/PHASE_4_MIGRATION_STRATEGY.md
+2026-01-31T11:45:27.8288916Z 
+2026-01-31T11:45:27.8288981Z 0 links checked.
+2026-01-31T11:45:27.8289079Z 
+2026-01-31T11:45:27.8289265Z FILE: ./docs/planning/repository-topology-migration/MIGRATION_STATUS.md
+2026-01-31T11:45:27.8289780Z 
+2026-01-31T11:45:27.8289849Z 6 links checked.
+2026-01-31T11:45:27.8289953Z 
+2026-01-31T11:45:27.8290149Z FILE: ./docs/planning/repository-topology-migration/FOUNDER_DECISION_BRIEF.md
+2026-01-31T11:45:27.8290441Z 
+2026-01-31T11:45:27.8290506Z 0 links checked.
+2026-01-31T11:45:27.8290609Z 
+2026-01-31T11:45:27.8290729Z FILE: ./docs/planning/wave5/WAVE_5_PLANNING_PACKAGE.md
+2026-01-31T11:45:27.8290936Z 
+2026-01-31T11:45:27.8291006Z 0 links checked.
+2026-01-31T11:45:27.8291105Z 
+2026-01-31T11:45:27.8291230Z FILE: ./docs/planning/wave5/WAVE_5_PLATFORM_ASSIGNMENT.md
+2026-01-31T11:45:27.8291446Z 
+2026-01-31T11:45:27.8291511Z 0 links checked.
+2026-01-31T11:45:27.8291609Z 
+2026-01-31T11:45:27.8291710Z FILE: ./docs/planning/wave5/WAVE_5_MCB_UPDATES.md
+2026-01-31T11:45:27.8291903Z 
+2026-01-31T11:45:27.8291969Z 0 links checked.
+2026-01-31T11:45:27.8292067Z 
+2026-01-31T11:45:27.8292161Z FILE: ./docs/planning/wave5/README.md
+2026-01-31T11:45:27.8292563Z (node:1097) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+2026-01-31T11:45:27.8293082Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-01-31T11:45:27.8293352Z 
+2026-01-31T11:45:27.8293417Z 4 links checked.
+2026-01-31T11:45:27.8293522Z 
+2026-01-31T11:45:27.8293640Z FILE: ./docs/planning/wave5/WAVE_5_CANDIDATE_PHASES.md
+2026-01-31T11:45:27.8293842Z 
+2026-01-31T11:45:27.8293907Z 0 links checked.
+2026-01-31T11:45:27.8294141Z 
+2026-01-31T11:45:27.8294294Z FILE: ./docs/planning/wave3-final/FOUNDER_DECISION_BRIEF_WAVE3.md
+2026-01-31T11:45:27.8294534Z 
+2026-01-31T11:45:27.8294604Z 0 links checked.
+2026-01-31T11:45:27.8294700Z 
+2026-01-31T11:45:27.8294852Z FILE: ./docs/planning/wave3-final/CB4_CONTROL_BOARD_AMENDMENT.md
+2026-01-31T11:45:27.8295092Z 
+2026-01-31T11:45:27.8295155Z 0 links checked.
+2026-01-31T11:45:27.8295253Z 
+2026-01-31T11:45:27.8295412Z FILE: ./docs/planning/wave3-final/WAVE_3_CANDIDATE_PHASES_UPDATED.md
+2026-01-31T11:45:27.8295667Z 
+2026-01-31T11:45:27.8295736Z 0 links checked.
+2026-01-31T11:45:27.8295834Z 
+2026-01-31T11:45:27.8295978Z FILE: ./docs/planning/wave3-final/PF3_VERIFICATION_REPORT.md
+2026-01-31T11:45:27.8296202Z 
+2026-01-31T11:45:27.8296265Z 0 links checked.
+2026-01-31T11:45:27.8296369Z 
+2026-01-31T11:45:27.8296503Z FILE: ./docs/planning/wave3-final/CB1_VERIFICATION_REPORT.md
+2026-01-31T11:45:27.8296724Z 
+2026-01-31T11:45:27.8296789Z 0 links checked.
+2026-01-31T11:45:27.8296898Z 
+2026-01-31T11:45:27.8297027Z FILE: ./docs/planning/wave3-final/CB4_VERIFICATION_REPORT.md
+2026-01-31T11:45:27.8297244Z 
+2026-01-31T11:45:27.8297318Z 0 links checked.
+2026-01-31T11:45:27.8297416Z 
+2026-01-31T11:45:27.8297600Z FILE: ./docs/planning/wave3-final/WAVE_3_EXECUTION_READINESS_GAPS_UPDATED.md
+2026-01-31T11:45:27.8297881Z 
+2026-01-31T11:45:27.8297944Z 0 links checked.
+2026-01-31T11:45:27.8298044Z 
+2026-01-31T11:45:27.8298186Z FILE: ./docs/planning/wave3-final/WAVE_3_VERIFICATION_REPORT.md
+2026-01-31T11:45:27.8298422Z 
+2026-01-31T11:45:27.8298485Z 0 links checked.
+2026-01-31T11:45:27.8298688Z 
+2026-01-31T11:45:27.8298921Z FILE: ./docs/planning/wave3-final/WAVE_3_PARALLELIZATION_PLATFORM_ASSIGNMENT_UPDATED.md
+2026-01-31T11:45:27.8299247Z 
+2026-01-31T11:45:27.8299467Z 0 links checked.
+2026-01-31T11:45:27.8299593Z 
+2026-01-31T11:45:27.8299730Z FILE: ./docs/planning/wave3-final/ID3_VERIFICATION_REPORT.md
+2026-01-31T11:45:27.8299948Z 
+2026-01-31T11:45:27.8300011Z 0 links checked.
+2026-01-31T11:45:27.8300120Z 
+2026-01-31T11:45:27.8300247Z FILE: ./docs/planning/wave3-final/ID1_VERIFICATION_REPORT.md
+2026-01-31T11:45:27.8300460Z 
+2026-01-31T11:45:27.8300529Z 0 links checked.
+2026-01-31T11:45:27.8300625Z 
+2026-01-31T11:45:27.8300842Z [0;33m=========================================================================[0m
+2026-01-31T11:45:27.9753028Z Post job cleanup.
+2026-01-31T11:45:28.0700739Z [command]/usr/bin/git version
+2026-01-31T11:45:28.0736474Z git version 2.52.0
+2026-01-31T11:45:28.0784773Z Temporarily overriding HOME='/home/runner/work/_temp/228e0db1-b46b-49b9-bb2a-eb2a4f635b55' before making global git config changes
+2026-01-31T11:45:28.0786053Z Adding repository directory to the temporary git global config as a safe directory
+2026-01-31T11:45:28.0790158Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/webwaka-governance/webwaka-governance
+2026-01-31T11:45:28.0822905Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-01-31T11:45:28.0854595Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-01-31T11:45:28.1080153Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-01-31T11:45:28.1099891Z http.https://github.com/.extraheader
+2026-01-31T11:45:28.1113450Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-01-31T11:45:28.1142978Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-01-31T11:45:28.1360321Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-01-31T11:45:28.1390139Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-01-31T11:45:28.1712282Z Cleaning up orphan processes

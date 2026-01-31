@@ -3,7 +3,7 @@
 **Version:** 1.0.0  
 **Date:** January 30, 2026  
 **Status:** 🟢 Complete  
-**Canonical Reference:** [CB-1: MLAS Capability](../../phases/CB-1_MLAS_CAPABILITY.md)
+**Canonical Reference:** [CB-1: MLAS Capability](../phases/CB-1_MLAS_CAPABILITY.md)
 
 ---
 
@@ -504,5 +504,5 @@ If Sale Amount < $50:
 
 ## 9. Related Documents
 
-- [Runbook](../../runbooks/RUNBOOK_CB1_MLAS.md)
-- [API Reference](../../api/API_CB1_MLAS.md)
+- [Runbook](../runbooks/RUNBOOK_CB1_MLAS.md)
+- [API Reference](../api/API_CB1_MLAS.md)
