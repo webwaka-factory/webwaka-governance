@@ -19,3 +19,9 @@ This index provides a comprehensive and chronologically ordered list of all rati
 | FD-2026-011 | Data Encryption At Rest                    | Ratified | [View](./2026/FD-2026-011.md)                                          |
 | FD-2026-012 | No Hardcoded Secrets                       | Ratified | [View](./2026/FD-2026-012.md)                                          |
 | FD-2026-013 | All Context Lives in GitHub                | Ratified | [View](./2026/FD-2026-013.md)                                          |
+| FD-2026-015 | Real-Time Systems Strategy                 | Draft    | [View](./2026/FD-2026-015.md)                                          |
+| FD-2026-016 | Social Graph & Content Management          | Draft    | [View](./2026/FD-2026-016.md)                                          |
+| FD-2026-017 | Marketplace Primitives                     | Draft    | [View](./2026/FD-2026-017.md)                                          |
+| FD-2026-018 | Geolocation Strategy                       | Draft    | [View](./2026/FD-2026-018.md)                                          |
+| FD-2026-019 | Module SDK & Partner Marketplace           | Draft    | [View](./2026/FD-2026-019.md)                                          |
+| FD-2026-020 | Compliance Framework                       | Draft    | [View](./2026/FD-2026-020.md)                                          |
