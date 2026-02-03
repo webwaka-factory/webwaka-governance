@@ -37,11 +37,20 @@ Before any agent may execute programmatic GitHub actions, the following prerequi
 - [ ] Execution instructions read and acknowledged
 
 **Verification:** Confirm you have read your role-specific prompt:
-- Founder: ROLE_ASSIGNMENT_FOUNDER.md
-- Chief of Staff: ROLE_ASSIGNMENT_CHIEF_OF_STAFF.md
-- Execution Agent: ROLE_ASSIGNMENT_EXECUTION_AGENT.md
-- QA Agent: ROLE_ASSIGNMENT_QA_AGENT.md
-- Security Agent: ROLE_ASSIGNMENT_SECURITY_AGENT.md
+- **Founder (webwakaagent1):** ROLE_ASSIGNMENT_webwakaagent1.md
+- **Chief of Staff (webwakaagent2):** ROLE_ASSIGNMENT_webwakaagent2.md
+- **Product Manager (webwakaagent3):** ROLE_ASSIGNMENT_webwakaagent3.md
+- **Tech Lead & Architect (webwakaagent4):** ROLE_ASSIGNMENT_webwakaagent4.md
+- **Backend Lead (webwakaagent5):** ROLE_ASSIGNMENT_webwakaagent5.md
+- **Frontend Lead (webwakaagent6):** ROLE_ASSIGNMENT_webwakaagent6.md
+- **Infrastructure & DevOps (webwakaagent7):** ROLE_ASSIGNMENT_webwakaagent7.md
+- **Data Engineer (webwakaagent8):** ROLE_ASSIGNMENT_webwakaagent8.md
+- **Capabilities Engineer (webwakaagent9):** ROLE_ASSIGNMENT_webwakaagent9.md
+- **Security Engineer (webwakaagent10):** ROLE_ASSIGNMENT_webwakaagent10.md
+- **QA Lead (webwakaagent11):** ROLE_ASSIGNMENT_webwakaagent11.md
+- **QA Engineer (webwakaagent12):** ROLE_ASSIGNMENT_webwakaagent12.md
+- **Documentation & UX (webwakaagent13):** ROLE_ASSIGNMENT_webwakaagent13.md
+- **Execution Agent (webwakaagent14):** ROLE_ASSIGNMENT_webwakaagent14.md
 
 ### 3. Founder Decisions Review
 
@@ -169,11 +178,17 @@ curl -H "Authorization: token $GITHUB_PAT" https://api.github.com/user
 
 | Role | Required Tools |
 |:---|:---|
-| **Execution Agent** | Git, Node.js/Python, Docker (if needed) |
-| **QA Agent** | Git, Testing frameworks, Test runners |
-| **Security Agent** | Git, Security scanning tools, Cryptography libraries |
-| **Chief of Staff** | Git, GitHub CLI (optional) |
-| **Founder** | Git, GitHub CLI (optional) |
+| **Product Manager** | Git, Project management tools |
+| **Tech Lead & Architect** | Git, IDE, Diagramming tools |
+| **Backend Lead** | Git, Python, Docker, IDE |
+| **Frontend Lead** | Git, Node.js, React, IDE |
+| **Infrastructure & DevOps** | Git, Terraform, Docker, CI/CD tools |
+| **Data Engineer** | Git, Python, SQL, Database tools |
+| **Capabilities Engineer** | Git, Python, Docker, IDE |
+| **Security Engineer** | Git, Security scanning tools, Cryptography libraries |
+| **QA Lead/Engineer** | Git, Testing frameworks, Test runners |
+| **Documentation & UX** | Git, Markdown editor, Design tools |
+| **Execution Agent** | Git, Node.js/Python, Docker |
 
 ---
 
